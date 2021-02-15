@@ -3,9 +3,21 @@
 one:
   firstName: MyString
   lastName: MyString
-  classYear: 2021-02-11
+  classYear: 1
+  position: MyString
+  email: MyString
+  phone: MyString
+  socialMedia: MyString
+  currentCity: MyString
+  company: MyString
 
 two:
   firstName: MyString
   lastName: MyString
-  classYear: 2021-02-11
+  classYear: 1
+  position: MyString
+  email: MyString
+  phone: MyString
+  socialMedia: MyString
+  currentCity: MyString
+  company: MyString

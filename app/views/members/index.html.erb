@@ -20,7 +20,7 @@
 		<tr>
 			<td><%= member.firstName %></td>
 			<td><%= member.lastName %></td>
-			<td><%= member.classYear.year %></td>
+			<td><%= member.classYear %></td>
 			<td class="actions">
 				<%= link_to("Show", member_path(member), :class => 'action show') %>
 				<%= link_to("Edit", edit_member_path(member), :class => 'action edit') %>
