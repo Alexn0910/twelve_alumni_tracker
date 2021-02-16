@@ -1,11 +1,18 @@
-<%= link_to("<< Back to List", members_path, :class => 'back-link') %>
+<%= stylesheet_link_tag "/stylesheets/style.css" %>
+<%= stylesheet_link_tag "/stylesheets/new.css" %>
 
 <div class="members new">
-	<h2>Create Member</h2>
+
+	<div class="page-title">
+		<div class="nav-link">
+			<%= button_to " << Back to List ", members_path, method: :get %>
+		</div>
+		<h1>Create Member</h1>
+	</div>
 	
 	<%= form_for(@member) do |f| %>
 
-		<table summary="Member Form Fields">
+		<table class="listings" summary="Member Form Fields">
 			<tr>
 				<th>First Name</th>
 				<td><%= f.text_field(:firstName) %></td>
@@ -44,8 +51,8 @@
 			</tr>
 		</table>
 		
-		<div class="form-butttons">
-			<%= f.submit("Create Member") %>
+		<div class="nav-bar">
+			<%= f.submit(" Create Member ") %>
 		</div>
 
 	<% end %>
