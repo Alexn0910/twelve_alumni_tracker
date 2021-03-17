@@ -45,4 +45,12 @@
 		<th>Company</th>
 		<td><%= @member.company %></td>
 	</tr>
+	<tr>
+		<th>Join date</th>
+		<td><%= @member.startDate.strftime("%B %Y") %></td>
+	</tr>
+	<tr>
+		<th>End date</th>
+		<td><%= @member.endDate.strftime("%B %Y") %></td>
+	</tr>
 </table>

@@ -1,0 +1,48 @@
+<%= error_messages_for(f.object) %>
+
+<table class="listings" summary="Member Form Fields">
+    <tr>
+        <th>First Name</th>
+        <td><%= f.text_field(:firstName) %></td>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <td><%= f.text_field(:lastName) %></td>
+    </tr>
+    <tr>
+        <th>Class Year</th>
+        <td><%= f.select :classYear, [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025] %></td>
+    </tr>
+    <tr>
+        <th>Highest Position</th>
+        <td><%= f.select :position, ['President', 'Vice President', 'Fundraising Committee Chair', 'Social Chair'] %></td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td><%= f.text_field(:phone) %></td>
+    </tr>
+    <tr>
+        <th>Social Media</th>
+        <td><%= f.text_field(:socialMedia) %></td>
+    </tr>
+    <tr>
+        <th>Current City</th>
+        <td><%= f.text_field(:currentCity) %></td>
+    </tr>
+    <tr>
+        <th>Company</th>
+        <td><%= f.text_field(:company) %></td>
+    </tr>
+    <tr>
+        <th>Join date</th>
+        <td><%= f.date_select(:startDate, order: [:month, :year]) %></td>
+    </tr>
+    <tr>
+        <th>End date</th>
+        <td><%= f.date_select(:endDate, order: [:month, :year]) %></td>
+    </tr>
+</table>

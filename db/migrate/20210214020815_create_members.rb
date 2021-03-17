@@ -10,6 +10,8 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       t.string :socialMedia
       t.string :currentCity
       t.string :company
+      t.timestamp :startDate
+      t.timestamp :endDate
 
       t.timestamps
     end
