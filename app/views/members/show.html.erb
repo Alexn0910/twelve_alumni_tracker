@@ -53,4 +53,12 @@
 		<th>End date</th>
 		<td><%= @member.endDate.strftime("%B %Y") %></td>
 	</tr>
+	<tr>
+		<th>Positions Held</th>
+		<td>
+			<% @member.positions.each do |b| %>
+				<li><%= b.name %></li>
+			<% end %>
+		</td>
+	</tr>
 </table>

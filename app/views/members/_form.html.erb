@@ -45,4 +45,13 @@
         <th>End date</th>
         <td><%= f.date_select(:endDate, order: [:month, :year]) %></td>
     </tr>
+    <tr>
+        <th>Positions Held</th>
+        <td>
+            <%= f.collection_check_boxes :position_ids, Position.all, :id, :name do |b| %>
+                <%= b.check_box %>
+                <%= b.label %><br>
+            <% end %>
+        </td>    
+    </tr>
 </table>

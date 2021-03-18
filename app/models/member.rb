@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
+    has_and_belongs_to_many :positions
+    
     validates :firstName, presence: true, allow_blank: false
     validates :lastName, presence: true, allow_blank: false
     validates :classYear, presence: true, allow_blank: false
