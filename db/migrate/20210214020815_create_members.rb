@@ -4,7 +4,6 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       t.string :firstName
       t.string :lastName
       t.integer :classYear
-      t.string :position
       t.string :email
       t.string :phone
       t.string :socialMedia

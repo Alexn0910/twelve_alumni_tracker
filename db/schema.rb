@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2021_03_18_002750) do
     t.string "firstName"
     t.string "lastName"
     t.integer "classYear"
-    t.string "position"
     t.string "email"
     t.string "phone"
     t.string "socialMedia"

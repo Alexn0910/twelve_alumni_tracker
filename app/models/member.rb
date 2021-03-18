@@ -4,7 +4,6 @@ class Member < ApplicationRecord
     validates :firstName, presence: true, allow_blank: false
     validates :lastName, presence: true, allow_blank: false
     validates :classYear, presence: true, allow_blank: false
-    validates :position, presence: true, allow_blank: false
     validates :email, presence: true, allow_blank: false
     validates :phone, presence: true, allow_blank: false
     validates :socialMedia, presence: true, allow_blank: true
