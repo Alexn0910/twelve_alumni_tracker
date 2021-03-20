@@ -1,16 +1,24 @@
-<%= link_to("<< Back to List", members_path, :class => 'back-link') %>
+<%= stylesheet_link_tag "/stylesheets/style.css" %>
+<%= stylesheet_link_tag "/stylesheets/delete.css" %>
 
-<div class="members delete">
-	<h2>Delete Member</h2>
+<div class="page-title">
+	<div class="nav-link">
+		<%= button_to " << Back to List ", members_path, method: :get %>
+	</div>
+	<h1>Delete Member</h1>
+</div>
+
+<%= form_for(@member, :method => 'delete') do |f| %>
+
+	<div class="form-box">
+		<div class="notification-box">
+			<p>Are you sure you want to permanently delete this member?</p>
+			<p><%= @member.firstName %>
+		</div>
 	
-	<%= form_for(@member, :method => 'delete') do |f| %>
-
-		<p>Are you sure you want to permanently delete this member?</p>
-		<p><%= @member.firstName %>
-		
 		<div class="form-butttons">
 			<%= f.submit("Delete Member") %>
 		</div>
-		
-	<% end %>
-</div>
+	</div>
+	
+<% end %>
