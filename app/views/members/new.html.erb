@@ -10,6 +10,8 @@
 		<h1>Create Member</h1>
 	</div>
 	
+<div class="required-fields">Fields marked with <span class="asterisk">*</span> are required</div>
+
 	<%= form_for(@member, :url => members_path, :method => 'post') do |f| %>
 
 		<%= render(:partial => 'form', :locals => {:f => f})%>

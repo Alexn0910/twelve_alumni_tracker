@@ -76,3 +76,10 @@
             padding-bottom: 10px;
         }
 
+.asterisk{
+    color: red;
+}
+
+.required-fields{
+    text-align: center;
+}
