@@ -2,23 +2,23 @@
 
 <table class="listings" summary="Member Form Fields">
     <tr>
-        <th>First Name</th>
+        <th>First Name<span class="asterisk">*</span></th>
         <td><%= f.text_field(:firstName) %></td>
     </tr>
     <tr>
-        <th>Last Name</th>
+        <th>Last Name<span class="asterisk">*</span></th>
         <td><%= f.text_field(:lastName) %></td>
     </tr>
     <tr>
-        <th>Class Year</th>
+        <th>Class Year<span class="asterisk">*</span></th>
         <td><%= f.select :classYear, [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025] %></td>
     </tr>
     <tr>
-        <th>Email</th>
+        <th>Email<span class="asterisk">*</span></th>
         <td><%= f.text_field(:email) %></td>
     </tr>
     <tr>
-        <th>Phone Number</th>
+        <th>Phone Number<span class="asterisk">*</span></th>
         <td><%= f.text_field(:phone) %></td>
     </tr>
     <tr>
@@ -31,23 +31,23 @@
         </td>
     </tr>
     <tr>
-        <th>Current City</th>
+        <th>Current City<span class="asterisk">*</span></th>
         <td><%= f.text_field(:currentCity) %></td>
     </tr>
     <tr>
-        <th>Company</th>
+        <th>Company<span class="asterisk">*</span></th>
         <td><%= f.text_field(:company) %></td>
     </tr>
     <tr>
-        <th>Join date</th>
+        <th>Join date<span class="asterisk">*</span></th>
         <td><%= f.date_select(:startDate, order: [:month, :year]) %></td>
     </tr>
     <tr>
-        <th>End date</th>
+        <th>End date<span class="asterisk">*</span></th>
         <td><%= f.date_select(:endDate, order: [:month, :year]) %></td>
     </tr>
     <tr>
-        <th>Positions Held</th>
+        <th>Positions Held<span class="asterisk">*</span></th>
         <td>
             <%= f.collection_check_boxes :position_ids, Position.all, :id, :name do |b| %>
                 <%= b.check_box %>
