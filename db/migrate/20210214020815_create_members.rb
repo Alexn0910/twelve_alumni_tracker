@@ -6,7 +6,10 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       t.integer :classYear
       t.string :email
       t.string :phone
-      t.string :socialMedia
+      t.string :socialMediaL
+      t.string :socialMediaI
+      t.string :socialMediaT
+      t.string :socialMediaF
       t.string :currentCity
       t.string :company
       t.timestamp :startDate

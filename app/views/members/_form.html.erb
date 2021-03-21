@@ -23,7 +23,12 @@
     </tr>
     <tr>
         <th>Social Media</th>
-        <td><%= f.text_field(:socialMedia) %></td>
+        <td>
+                LinkedIn: <%= f.text_field :socialMediaL, :size=>"30" %>
+                Instagram: <%= f.text_field :socialMediaI, :size=>"30" %>
+                Facebook: <%= f.text_field :socialMediaF, :size=>"30" %>
+                Twitter: <%= f.text_field :socialMediaT, :size=>"30" %>
+        </td>
     </tr>
     <tr>
         <th>Current City</th>

@@ -31,7 +31,23 @@
 	</tr>
 	<tr>
 		<th>Social Media</th>
-		<td><%= @member.socialMedia %></td>
+		<td>
+			<% if (@member.socialMediaL.length != 0) then %>
+		    	<li>LinkedIn: <%= @member.socialMediaL %></li>
+			<% end %>
+			<% if (@member.socialMediaI.length != 0) then %>
+				<li>Instagram: <%= @member.socialMediaI %><br></li>
+			<% end %>
+			<% if (@member.socialMediaF.length != 0) then %>
+				<li>Facebook: <%= @member.socialMediaF %><br></li>
+			<% end %>
+			<% if (@member.socialMediaT.length != 0) then %>
+				<li>Twitter: <%= @member.socialMediaT %><br></li>
+			<% end %>
+			<% if (@member.socialMediaL.length == 0) && (@member.socialMediaT.length == 0) && (@member.socialMediaI.length == 0) && (@member.socialMediaF.length == 0) then %>
+				N/A
+			<% end %>
+		</td>
 	</tr>
 	<tr>
 		<th>Current City</th>
