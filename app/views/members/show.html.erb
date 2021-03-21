@@ -22,8 +22,8 @@
 		<td><%= @member.classYear %></td>
 	</tr>
 	<tr>
-		<th>Highest Position</th>
-		<td><%= @member.position %></td>
+		<th>Major</th>
+		<td><%= @member.major %></td>
 	</tr>
 	<tr>
 		<th>Email</th>
@@ -35,7 +35,27 @@
 	</tr>
 	<tr>
 		<th>Social Media</th>
-		<td><%= @member.socialMedia %></td>
+		<td>
+			<% if (@member.socialMediaL.length != 0) then %>
+		    	<li>LinkedIn: <%= @member.socialMediaL %></li>
+			<% end %>
+			<% if (@member.socialMediaI.length != 0) then %>
+				<li>Instagram: <%= @member.socialMediaI %><br></li>
+			<% end %>
+			<% if (@member.socialMediaF.length != 0) then %>
+				<li>Facebook: <%= @member.socialMediaF %><br></li>
+			<% end %>
+			<% if (@member.socialMediaT.length != 0) then %>
+				<li>Twitter: <%= @member.socialMediaT %><br></li>
+			<% end %>
+			<% if (@member.socialMediaO.length != 0) then %>
+				<li>Other: <%= @member.socialMediaO %><br></li>
+			<% end %>
+			<% if (@member.socialMediaL.length == 0) && (@member.socialMediaT.length == 0) && 
+			(@member.socialMediaI.length == 0) && (@member.socialMediaF.length == 0) && (@member.socialMediaO.length == 0) then %>
+				N/A
+			<% end %>
+		</td>
 	</tr>
 	<tr>
 		<th>Current City</th>
@@ -44,5 +64,21 @@
 	<tr>
 		<th>Company</th>
 		<td><%= @member.company %></td>
+	</tr>
+	<tr>
+		<th>Join date</th>
+		<td><%= @member.startDate.strftime("%B %Y") %></td>
+	</tr>
+	<tr>
+		<th>End date</th>
+		<td><%= @member.endDate.strftime("%B %Y") %></td>
+	</tr>
+	<tr>
+		<th>Positions Held</th>
+		<td>
+			<% @member.positions.each do |b| %>
+				<li><%= b.name %></li>
+			<% end %>
+		</td>
 	</tr>
 </table>
