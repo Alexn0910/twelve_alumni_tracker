@@ -1,84 +1,123 @@
 <%= stylesheet_link_tag "/stylesheets/style.css" %>
-<%= stylesheet_link_tag "/stylesheets/show.css" %>
 
-<div class="page-title">
-	<div class="nav-link">
-		<%= button_to " << Back to List ", members_path, method: :get %>
-	</div>
-	<h1>Show Member</h1>
+<div class="jumbotron text-center">
+	<h1><%= @member.firstName %> <%= @member.lastName %></td></h1>
 </div>
 
-<table  class="listings" summary="Member detail view">
-	<tr>
-		<th>First Name</th>
-		<td><%= @member.firstName %></td>
-	</tr>
-	<tr>
-		<th>Last Name</th>
-		<td><%= @member.lastName %></td>
-	</tr>
-	<tr>
-		<th>Class Year</th>
-		<td><%= @member.classYear %></td>
-	</tr>
-	<tr>
-		<th>Major</th>
-		<td><%= @member.major %></td>
-	</tr>
-	<tr>
-		<th>Email</th>
-		<td><%= @member.email %></td>
-	</tr>
-	<tr>
-		<th>Phone Number</th>
-		<td><%= @member.phone %></td>
-	</tr>
-	<tr>
-		<th>Social Media</th>
-		<td>
+<div class="container text-center">
+	<table class="table table-hover">
+        <%# ------------ CONTACT INFORMATION ------------ %>
+        <tr>
+            <th colspan="2" style="background-color: #353A3F; color: white;">Contact Information</th>
+        </tr>
+		<tr>
+            <th>Phone Number</th>
+            <td><%= @member.phone %></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><%= @member.email %></td>
+        </tr>
+        <%# ------------ SOCIAL MEDIA ------------ %>
+        
+		<% if (@member.socialMediaL.length != 0) && (@member.socialMediaT.length != 0) && 
+			(@member.socialMediaI.length != 0) && (@member.socialMediaF.length != 0) && (@member.socialMediaO.length != 0) then %>
+			
+			<tr>
+				<th colspan="2" style="background-color: #353A3F; color: white;">Social Media</th>
+			</tr>
+
 			<% if (@member.socialMediaL.length != 0) then %>
-		    	<li>LinkedIn: <%= @member.socialMediaL %></li>
+				<tr>
+					<th>LinkedIn</th>
+					<td><%= @member.socialMediaL %></td>
+				</tr>
 			<% end %>
+
 			<% if (@member.socialMediaI.length != 0) then %>
-				<li>Instagram: <%= @member.socialMediaI %><br></li>
+				<tr>
+					<th>Instagram</th>
+					<td><%= @member.socialMediaI %></td>
+				</tr>
 			<% end %>
+
 			<% if (@member.socialMediaF.length != 0) then %>
-				<li>Facebook: <%= @member.socialMediaF %><br></li>
+				<tr>
+					<th>Facebook</th>
+					<td><%= @member.socialMediaF %></td>
+				</tr>
 			<% end %>
+
 			<% if (@member.socialMediaT.length != 0) then %>
-				<li>Twitter: <%= @member.socialMediaT %><br></li>
+				<tr>
+					<th>Twitter</th>
+					<td><%= @member.socialMediaT %></td>
+				</tr>
 			<% end %>
+
 			<% if (@member.socialMediaO.length != 0) then %>
-				<li>Other: <%= @member.socialMediaO %><br></li>
+				<tr>
+					<th>Other</th>
+					<td><%= @member.socialMediaO %></td>
+				</tr>
 			<% end %>
-			<% if (@member.socialMediaL.length == 0) && (@member.socialMediaT.length == 0) && 
-			(@member.socialMediaI.length == 0) && (@member.socialMediaF.length == 0) && (@member.socialMediaO.length == 0) then %>
-				N/A
-			<% end %>
-		</td>
-	</tr>
-	<tr>
-		<th>Current City</th>
-		<td><%= @member.currentCity %></td>
-	</tr>
-	<tr>
-		<th>Company</th>
-		<td><%= @member.company %></td>
-	</tr>
-	<tr>
-		<th>Join date</th>
-		<td><%= @member.startDate.strftime("%B %Y") %></td>
-	</tr>
-	<tr>
-		<th>End date</th>
-		<td><%= @member.endDate.strftime("%B %Y") %></td>
-	</tr>
-	<tr>
-		<th>Positions Held</th>
-		<td>
-			<% @member.positions.each do |b| %>
-				<li><%= b.name %></li>
-			<% end %>
-		</td>
-	</tr>
-</table>
+		<% end %>
+        <%# ------------ Education ------------ %>
+        <tr>
+            <th colspan="2" style="background-color: #353A3F; color: white;">Education</th>
+        </tr>
+
+        <tr>
+            <th>Major</th>
+            <td><%= @member.major %></td>
+        </tr>
+
+        <tr>
+            <th>Class Year</th>
+            <td><%= @member.classYear %></td>
+        </tr>
+        
+        <%# ------------ Location & Employment ------------ %>
+        <tr>
+            <th colspan="2" style="background-color: #353A3F; color: white;">Location & Employment</th>
+        </tr>
+
+        <tr>
+            <th>Current City</th>
+            <td><%= @member.currentCity %></td>
+        </tr>
+		<% if (@member.company.length != 0) then %>
+			<tr>
+				<th>Company</th>
+				<td><%= @member.company %></td>
+			</tr>
+		<%end%>
+        <%# ------------ Twelve Organization Involvement ------------ %>
+        <tr>
+            <th colspan="2" style="background-color: #353A3F; color: white;">Twelve Organization Involvement</th>
+        </tr>
+        <tr>
+            <th>Join date</th>
+            <td><%= @member.startDate.strftime("%B %Y") %></td>
+        </tr>
+        <tr>
+            <th>End date</th>
+            <td><%= @member.endDate.strftime("%B %Y") %></td>
+        </tr>
+        <tr>
+            <th>Positions Held</th>
+			<td>
+				<% @member.positions.each do |b| %>
+					<li><%= b.name %></li>
+				<% end %>
+			</td>
+        </tr>
+    </table>
+
+	<div class="container text-center mb-5 mt-5">
+		<div type="button" class="btn btn-secondary">
+			<%= link_to("Back", members_path, style:"color: white") %>
+		</div>
+	</div>
+
+</div>
