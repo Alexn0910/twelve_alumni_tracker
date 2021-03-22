@@ -10,18 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_03_18_002750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "admins", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
     t.integer "classYear"
+    t.string "major"
     t.string "email"
     t.string "phone"
-    t.string "socialMedia"
+    t.string "socialMediaL"
+    t.string "socialMediaI"
+    t.string "socialMediaT"
+    t.string "socialMediaF"
+    t.string "socialMediaO"
     t.string "currentCity"
     t.string "company"
     t.datetime "startDate"
