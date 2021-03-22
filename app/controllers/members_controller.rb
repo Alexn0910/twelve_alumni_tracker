@@ -23,7 +23,7 @@ class MembersController < ApplicationController
 		#save the object
 		if @member.save
 		#if save succeeds, redirect to the index action
-			flash[:notice]="Member added successfully"
+			flash[:success]="Member added successfully"
 			redirect_to(members_path)
 		else
 		#if save fails, redisplay the form so user can fix problems
@@ -38,7 +38,7 @@ class MembersController < ApplicationController
 	def update
 		@member = Member.find(params[:id])
 		if @member.update(member_params)
-			flash[:notice]="Member updated successfully"
+			flash[:success]="Member updated successfully"
 			redirect_to(members_path)
 		else
 			render('edit')
@@ -52,7 +52,7 @@ class MembersController < ApplicationController
 	def destroy
 		@member = Member.find(params[:id])
 		@member.destroy
-		flash[:notice]="Member '#{@member.firstName}' deleted successfully"
+		flash[:success]="Member '#{@member.firstName}' deleted successfully"
 		redirect_to(members_path)
 	end
 	

@@ -1,30 +1,10 @@
 <%= stylesheet_link_tag "/stylesheets/style.css" %>
 
-
-<% if !flash[:notice].blank? %>
-	<div class="notice">
-		<%= flash[:notice] %>
-	</div>
-<% end %>
-
-<nav class="navbar navbar-expand-md">
-  <%# <span class="navbar-brand h1 text-center">Twelve Alumni <br> Tracker</span> %>
-  <a class="navbar-brand" href="/members">Twelve Alumni <br> Tracker</a>
-	
-	<%# <span class="navbar-brand mb-0 h1 text-center"> %>
-		<%# <%= button_to "Twelve Alumni <br> Tracker", members_path, method: :get %>
-		<%# <%= link_to("Twelve Alumni Tracker", members_path) %>
-	<%# </span> %>
-  <%# <%= button_to " << Back to List ", members_path, method: :get %> 
-</nav>
-
-
 <%# <h2>You're logged in! Welcome to the Twelve Alumni Tracker!</h2> %>
 <%# <%= link_to "Sign Out", destroy_admin_session_path %>
 
 <div class="jumbotron text-center">
-	<h1>Twelve Alumni Tracker</h1>
-		<%# <%= button_to "Add New Alumni", new_member_path, method: :get, class:"btn btn-primary" %>
+	<h1 class="display-1">Alumni</h1>
 	<div class="btn btn-primary">
 		<%= link_to("Add New Alumni", new_member_path, style:"color: white") %>
 	</div>
