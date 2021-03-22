@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "/stylesheets/style.css" %>
-<%= stylesheet_link_tag "/stylesheets/index.css" %>
+
 
 <% if !flash[:notice].blank? %>
 	<div class="notice">
@@ -7,31 +7,57 @@
 	</div>
 <% end %>
 
-<h2>You're logged in! Welcome to the Twelve Alumni Tracker!</h2>
-<%= link_to "Sign Out", destroy_admin_session_path %>
+<nav class="navbar navbar-expand-md">
+  <%# <span class="navbar-brand h1 text-center">Twelve Alumni <br> Tracker</span> %>
+  <a class="navbar-brand" href="/members">Twelve Alumni <br> Tracker</a>
+	
+	<%# <span class="navbar-brand mb-0 h1 text-center"> %>
+		<%# <%= button_to "Twelve Alumni <br> Tracker", members_path, method: :get %>
+		<%# <%= link_to("Twelve Alumni Tracker", members_path) %>
+	<%# </span> %>
+  <%# <%= button_to " << Back to List ", members_path, method: :get %> 
+</nav>
 
-<div class="page-title">
+
+<%# <h2>You're logged in! Welcome to the Twelve Alumni Tracker!</h2> %>
+<%# <%= link_to "Sign Out", destroy_admin_session_path %>
+
+<div class="jumbotron text-center">
 	<h1>Twelve Alumni Tracker</h1>
-	<%= button_to "Add New Member", new_member_path, method: :get %>
+		<%# <%= button_to "Add New Alumni", new_member_path, method: :get, class:"btn btn-primary" %>
+	<div class="btn btn-primary">
+		<%= link_to("Add New Alumni", new_member_path, style:"color: white") %>
+	</div>
 </div>
 
-<table class="listings" summary="Member List">
-	<tr class="header">
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Class Year</th>
-		<th>Actions</th>
-	</tr>
-	<% @members.each do |member| %>
-	<tr>
-		<td><%= member.firstName %></td>
-		<td><%= member.lastName %></td>
-		<td><%= member.classYear %></td>
-		<td class="actions">
-			<%= link_to("Show", member_path(member), :class => 'action show') %>
-			<%= link_to("Edit", edit_member_path(member), :class => 'action edit') %>
-			<%= link_to("Delete", delete_member_path(member), :class => 'action delete') %>
-		</td>
-	</tr>
-	<% end %>
-</table>
+<%# <table class="listings" summary="Member List"> %>
+<div class="container text-center">
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="table-dark">	
+			<tr>
+				<th class = "text-center">First Name</th>
+				<th class = "text-center">Last Name</th>
+				<th class = "text-center">Class Year</th>
+				<th class = "text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @members.each do |member| %>
+			<tr>
+				<td><%= member.firstName %></td>
+				<td><%= member.lastName %></td>
+				<td><%= member.classYear %></td>
+				<td>
+					<p>
+					<%= link_to("Show", member_path(member), :class => 'action show') %>
+					| 
+					<%= link_to("Edit", edit_member_path(member), :class => 'action edit') %>
+					| 
+					<%= link_to("Delete", delete_member_path(member), :class => 'action delete') %>
+					</p>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

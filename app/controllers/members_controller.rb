@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
 	
-	layout false
+	# layout false
 	
 	def index
 		#render('index')

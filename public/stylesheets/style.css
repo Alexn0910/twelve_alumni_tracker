@@ -1,9 +1,9 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
-}
+} */
 
-.page-title
+/* .page-title
 {
     background: #346EAA;
     text-align: center;
@@ -16,13 +16,34 @@
         text-align: center;
         color: white;
         position: relative;
-        /* top: 35%; */
         font-size: 50px;
         margin: 20px 125px 20px 125px;
         border-bottom: 5px solid white;
-    }
+    } */
 
-.listings
+.navbar-custom {
+    height: 50px;
+}
+
+.jumbotron
+{
+    background-color: #00C2FF;
+    color: white;
+} */
+
+.table.table-bordered > thead > tr > th{
+    border:2px solid black;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #d9d9d9;
+ }
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #cccccc;
+  }
+
+/* .listings
 {
     position: relative;
     left: 10%;
@@ -44,9 +65,9 @@
 
     tr:nth-child(even) {
         background-color: #dddddd;
-    }
+    } */
 
-.nav-link
+/* .nav-link
 {
     color: white;
     text-align: left;
@@ -82,4 +103,4 @@
 
 .required-fields{
     text-align: center;
-}
+} */
