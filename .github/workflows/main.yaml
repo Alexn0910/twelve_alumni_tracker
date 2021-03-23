@@ -1,4 +1,4 @@
-name: Rspec Tests
+name: CI Testing
 
 on: [push, pull_request]
 
@@ -44,8 +44,8 @@ jobs:
         gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
-        bin/rails db:reset --trace
-        bin/rails webpacker:install
+        sudo bin/rails db:reset --trace
+        sudo bin/rails webpacker:install
     - name: Run tests
       env:
         PGHOST: localhost
