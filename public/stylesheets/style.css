@@ -1,85 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.page-title
+.jumbotron
 {
-    background: #346EAA;
-    text-align: center;
-    width: 100%;
-    height: 150px;
-    display: inline-block;
-}
-    .page-title h1
-    {
-        text-align: center;
-        color: white;
-        position: relative;
-        /* top: 35%; */
-        font-size: 50px;
-        margin: 20px 125px 20px 125px;
-        border-bottom: 5px solid white;
-    }
-
-.listings
-{
-    position: relative;
-    left: 10%;
-    width: 80%;
-    margin-top: 25px;
-}
-
-    table {
-        border-collapse: collapse;
-        background-color: white;
-    }
-
-    td, th 
-    {
-        border: 1px solid black;
-        text-align: left;
-        padding: 10px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-
-.nav-link
-{
+    background-color: #00C2FF;
     color: white;
-    text-align: left;
-    width: 100%;
+} */
+
+.table.table-bordered > thead > tr > th{
+    border:2px solid black;
 }
 
-.nav-bar{
-    text-align: center;
-}
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #d9d9d9;
+ }
 
-.form-box
-{
-    margin: 25px 0px 25px 0px;
-    text-align: center;
-}
-
-    .notification-box
-    {
-        margin-bottom: 25px;
-        display: inline-block;
-        padding: 10px 10px 0px 10px;
-        text-align: center;
-        border: 2.5px solid black;
-    }
-        .notification-box p
-        {
-            padding-bottom: 10px;
-        }
-
-.asterisk{
-    color: red;
-}
-
-.required-fields{
-    text-align: center;
-}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #cccccc;
+  }
