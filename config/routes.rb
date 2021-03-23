@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :positions
-  
+
   resources :members do
-	  member do
-		  get :delete
-	  end
+    member do
+      get :delete
+    end
   end
-  
 end
