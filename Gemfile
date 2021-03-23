@@ -29,9 +29,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # for Google OAuth
-gem 'devise'
+# gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth-google-oauth2'
 gem 'omniauth', '~>1.9.1'
+gem "omniauth-rails_csrf_protection"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,10 +44,14 @@ group :development, :test do
 
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
+  gem 'simplecov'
 
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
   gem 'webdrivers'
+
+  gem 'factory_bot_rails'
+
 end
 
 group :development do

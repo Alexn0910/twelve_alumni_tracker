@@ -7,7 +7,7 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore all logfiles and tempfiles.
+# Ignore all logfiles and temspfiles.
 /log/*
 /tmp/*
 !/log/.keep
@@ -34,3 +34,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/coverage
