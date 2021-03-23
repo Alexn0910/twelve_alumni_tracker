@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Add Member: ', type: :feature do
 
     before(:each) do
-        # @request.env["devise.mapping"] = Devise.mappings[:admin]
         @admin = Admin.create(email:"test@gmail.com")
-        # sign_in FactoryBot.create(:admin)
         sign_in @admin
     end
 
