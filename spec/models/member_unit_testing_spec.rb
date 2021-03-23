@@ -7,9 +7,14 @@ RSpec.describe Member, :type => :model do
             firstName: "Nick",
             lastName: "Wanner",
             classYear: 2016,
+            major: "computer engineering",
             email: "nickrwann@gmail.com",
             phone: "8323490727",
-            socialMedia: "@_nickwinner_",
+            socialMediaL: "social media",
+            socialMediaI: "social media",
+            socialMediaF: "social media",
+            socialMediaT: "social media",
+            socialMediaO: "social media",
             currentCity: "College Station",
             company: "Dell",
             startDate: Time.new,
@@ -39,16 +44,6 @@ RSpec.describe Member, :type => :model do
 
     it 'Is not valid without an email' do
         subject.email = nil
-        expect(subject).to_not be_valid
-    end
-
-    it 'Is not valid without a phone number' do
-        subject.phone = nil
-        expect(subject).to_not be_valid
-    end
-
-    it 'Is not valid without a current city' do
-        subject.currentCity = nil
         expect(subject).to_not be_valid
     end
 

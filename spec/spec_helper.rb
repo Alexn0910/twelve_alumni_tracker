@@ -19,6 +19,7 @@ SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
   add_filter '/spec/' # for rspec
+  # add_filter 'helper'
 end
 
 RSpec.configure do |config|
@@ -105,4 +106,16 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+
 end
+
+# OmniAuth.config.test_mode = true
+# OmniAuth.config.add_mock(
+#   :google_oauth2,
+#   {
+#     :info => {
+#       :email=>"test@gmail.com",
+#       :name=>"Test User"
+#     }
+# })
