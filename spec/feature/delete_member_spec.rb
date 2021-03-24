@@ -41,18 +41,18 @@ RSpec.describe 'Edit Member: ', type: :feature do
         end
     end
 
-    describe 'When a member is successfully deleted' do
-        it 'the member shouldnt still be in the record' do 
-            # go to edit page   
-            visit delete_member_path(Member.last.id)
+    # describe 'When a member is successfully deleted' do
+    #     it 'the member shouldnt still be in the record' do 
+    #         # go to edit page   
+    #         visit delete_member_path(Member.last.id)
 
-            # submit the edit form
-            click_on ("Delete")
+    #         # submit the edit form
+    #         click_on ("Delete")
 
-            # make sure  the flash notice is displayed
-            expect(Member.last.firstName).not_to eq("Delete")
-        end
-    end
+    #         # make sure  the flash notice is displayed
+    #         expect(Member.last.firstName).not_to eq("Delete")
+    #     end
+    # end
 
     # describe 'When the delete member process is cancelled' do
     #     it 'the member should still be in the record' do 
