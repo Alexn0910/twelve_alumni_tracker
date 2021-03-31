@@ -23,5 +23,4 @@ RSpec.describe 'Add Member: ', type: :feature do
       expect(page).to have_content('TestLastName')
       expect(page).to have_content('2016')
     end
-  end
 end

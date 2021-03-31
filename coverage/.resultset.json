@@ -12,7 +12,7 @@
         "lines": [
           1,
           1,
-          0,
+          5,
           null,
           null
         ]
@@ -71,77 +71,69 @@
           null
         ]
       },
-      "/Users/nicholaswanner/Desktop/Classes/Spring 2021/CSCE-431/twelve_alumni_tracker/app/models/position.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/nicholaswanner/Desktop/Classes/Spring 2021/CSCE-431/twelve_alumni_tracker/app/controllers/members_controller.rb": {
         "lines": [
           1,
           null,
           null,
-          null,
           1,
           null,
-          2,
-          null,
-          null,
-          1,
-          0,
+          4,
           null,
           null,
           1,
-          0,
+          46,
           null,
           null,
           1,
+          1,
           null,
           null,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
+          1,
           null,
           null,
           null,
           1,
-          0,
-          null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          null,
+          1,
+          1,
+          null,
           null,
           0,
           null,
           null,
           null,
           1,
-          2,
+          3,
           null,
           null,
           1,
-          2,
-          2,
+          3,
+          3,
           2,
           2,
           null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           null,
           1,
-          0,
+          4,
           null,
           null,
           null
@@ -153,8 +145,15 @@
           1,
           null
         ]
+      },
+      "/Users/nicholaswanner/Desktop/Classes/Spring 2021/CSCE-431/twelve_alumni_tracker/app/models/position.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1616553345
+    "timestamp": 1617231820
   }
 }
