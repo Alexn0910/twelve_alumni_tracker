@@ -5,5 +5,12 @@
   <%= @semester.name %>
 </p>
 
+<p>
+  <strong>Members:</strong>
+  <% @semester.members.each do |b| %>
+    <li><%= b.firstName %> <%= b.lastName %></li>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_semester_path(@semester) %> |
 <%= link_to 'Back', semesters_path %>
