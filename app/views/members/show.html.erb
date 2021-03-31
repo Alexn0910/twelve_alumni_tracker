@@ -18,7 +18,7 @@
             <th>Email</th>
             <td><%= @member.email %></td>
         </tr>
-        <%# ------------ SOCIAL MEDIA ------------ %>
+		<%# ------------ SOCIAL MEDIA ------------ %>
         
 		<% if (@member.socialMediaL.length != 0) || (@member.socialMediaT.length != 0) || 
 			(@member.socialMediaI.length != 0) || (@member.socialMediaF.length != 0) || (@member.socialMediaO.length != 0) then %>
@@ -33,28 +33,24 @@
 					<td><%= @member.socialMediaL %></td>
 				</tr>
 			<% end %>
-
 			<% if (@member.socialMediaI.length != 0) then %>
 				<tr>
 					<th>Instagram</th>
 					<td><%= @member.socialMediaI %></td>
 				</tr>
 			<% end %>
-
 			<% if (@member.socialMediaF.length != 0) then %>
 				<tr>
 					<th>Facebook</th>
 					<td><%= @member.socialMediaF %></td>
 				</tr>
 			<% end %>
-
 			<% if (@member.socialMediaT.length != 0) then %>
 				<tr>
 					<th>Twitter</th>
 					<td><%= @member.socialMediaT %></td>
 				</tr>
 			<% end %>
-
 			<% if (@member.socialMediaO.length != 0) then %>
 				<tr>
 					<th>Other</th>
