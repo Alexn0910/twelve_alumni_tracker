@@ -20,8 +20,8 @@
         </tr>
         <%# ------------ SOCIAL MEDIA ------------ %>
         
-		<% if (@member.socialMediaL.length != 0) && (@member.socialMediaT.length != 0) && 
-			(@member.socialMediaI.length != 0) && (@member.socialMediaF.length != 0) && (@member.socialMediaO.length != 0) then %>
+		<% if (@member.socialMediaL.length != 0) || (@member.socialMediaT.length != 0) || 
+			(@member.socialMediaI.length != 0) || (@member.socialMediaF.length != 0) || (@member.socialMediaO.length != 0) then %>
 			
 			<tr>
 				<th colspan="2" style="background-color: #353A3F; color: white;">Social Media</th>

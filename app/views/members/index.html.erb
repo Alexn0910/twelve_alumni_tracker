@@ -1,16 +1,12 @@
 <%= stylesheet_link_tag "/stylesheets/style.css" %>
 
-<%# <h2>You're logged in! Welcome to the Twelve Alumni Tracker!</h2> %>
-<%# <%= link_to "Sign Out", destroy_admin_session_path %>
-
 <div class="jumbotron text-center">
 	<h1 class="display-1">Alumni</h1>
-	<div class="btn btn-primary">
-		<%= link_to("Add New Alumni", new_member_path, style:"color: white") %>
+	<div class="btn btn-dark">
+		<%= link_to("Add New Alumni", new_member_path, style:"color: white", value:"AddNewMemberBtn") %>
 	</div>
 </div>
 
-<%# <table class="listings" summary="Member List"> %>
 <div class="container text-center">
 	<table class="table table-bordered table-striped table-hover">
 		<thead class="table-dark">	
@@ -28,13 +24,9 @@
 				<td><%= member.lastName %></td>
 				<td><%= member.classYear %></td>
 				<td>
-					<p>
-					<%= link_to("Show", member_path(member), :class => 'action show') %>
-					| 
-					<%= link_to("Edit", edit_member_path(member), :class => 'action edit') %>
-					| 
+					<%= link_to("Show", member_path(member), :class => 'action show') %> |
+					<%= link_to("Edit", edit_member_path(member), :class => 'action edit') %> |
 					<%= link_to("Delete", delete_member_path(member), :class => 'action delete') %>
-					</p>
 				</td>
 			</tr>
 			<% end %>

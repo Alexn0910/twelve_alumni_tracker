@@ -19,7 +19,17 @@ SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
   add_filter '/spec/' # for rspec
-  # add_filter 'helper'
+  add_filter 'omniauth_callbacks_controller.rb'
+  add_filter 'positions_controller.rb'
+  add_filter 'admin.rb'
+
+  add_filter 'channel.rb'
+  add_filter 'connection.rb'
+  add_filter 'sessions_controller.rb'
+  add_filter 'dashboards_controller.rb'
+  add_filter 'application_job.rb'
+  add_filter 'application_mailer.rb'
+
 end
 
 RSpec.configure do |config|
