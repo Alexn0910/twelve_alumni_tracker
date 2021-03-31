@@ -88,4 +88,4 @@ production:
   <<: *default
   database: twelve_alumni_tracker_production
   username: twelve_alumni_tracker
-  password: <%= ENV['TWELVE_ALUMNI_TRACKER_DATABASE_PASSWORD'] %>
+  password: twelve
