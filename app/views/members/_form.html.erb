@@ -94,5 +94,14 @@
                 <% end %>
             </td>    
         </tr>
+        <tr>
+            <th>Semesters<span class="asterisk">*</span></th>
+            <td>
+                <%= f.collection_check_boxes :semester_ids, Semester.all, :id, :name do |b| %>
+                    <%= b.check_box %>
+                    <%= b.label %><br>
+                <% end %>
+            </td>
+        </tr>
     </table>
 </div>

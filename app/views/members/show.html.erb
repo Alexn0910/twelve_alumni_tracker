@@ -108,6 +108,14 @@
 				<% end %>
 			</td>
         </tr>
+		<tr>
+            <th>Semesters</th>
+			<td>
+				<% @member.semesters.each do |b| %>
+					<li><%= b.name %></li>
+				<% end %>
+			</td>
+        </tr>
     </table>
 
 	<div class="container text-center mb-5 mt-5">
