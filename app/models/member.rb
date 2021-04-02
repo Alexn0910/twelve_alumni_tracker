@@ -17,7 +17,5 @@ class Member < ApplicationRecord
   validates :startDate, presence: true, allow_blank: false
   validates :endDate, presence: true, allow_blank: false
   validates :position_ids, presence: true, allow_blank: false
-
   
-
 end
