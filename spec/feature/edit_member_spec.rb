@@ -4,9 +4,9 @@ RSpec.describe 'Edit Member: ', type: :feature do
 
     before(:all) do
         Member.new(
-            firstName: "Nick",
-            lastName: "Wanner",
-            classYear: 2016,
+            first_name: "Nick",
+            last_name: "Wanner",
+            class_year: 2016,
             major: "computer engineering",
             email: "nickrwann@gmail.com",
             phone: "8323490727",
@@ -15,7 +15,7 @@ RSpec.describe 'Edit Member: ', type: :feature do
             socialMediaF: "",
             socialMediaT: "",
             socialMediaO: "",
-            currentCity: "College Station",
+            current_city: "College Station",
             company: "Dell",
             startDate: Time.new,
             endDate: Time.new,
@@ -49,15 +49,15 @@ RSpec.describe 'Edit Member: ', type: :feature do
             visit edit_member_path(Member.last.id)
 
             # edit the member
-            fill_in "member_firstName", with: "NewTestFirstName"
-            fill_in "member_lastName", with: "NewTestLastName"
+            fill_in "member_first_name", with: "NewTestfirst_name"
+            fill_in "member_last_name", with: "NewTestlast_name"
 
             # submit the edit form
             click_on ("Submit")
 
             # make sure  the flash notice is displayed
-            expect(page).to have_content("NewTestFirstName")
-            expect(page).to have_content("NewTestLastName")
+            expect(page).to have_content("NewTestfirst_name")
+            expect(page).to have_content("NewTestlast_name")
         end
     end
 
@@ -68,7 +68,7 @@ RSpec.describe 'Edit Member: ', type: :feature do
             visit edit_member_path(Member.last.id)
 
             # edit the member
-            fill_in "member_firstName", with: ""
+            fill_in "member_first_name", with: ""
 
             # submit the edit form
             click_on ("Submit")

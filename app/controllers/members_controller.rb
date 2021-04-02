@@ -8,10 +8,9 @@ class MembersController < ApplicationController
     @searchVal = ""
     if params[:search] != nil
       @searchVal = params[:search]
-      # @members = Member.all.where(["firstName LIKE ? OR lastName LIKE ? OR classYear LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%"]).order("id ASC")
-      @members = Member.all.where("lower(email) LIKE ?", "%#{@searchVal.downcase}%").order("id ASC")
+      @members = Member.all.where(["lower(first_name) LIKE ? OR lower(last_name) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%"]).order("id ASC")
     else
-      @members = Member.order('id ASC')
+      @members = Member.all.order('id ASC')
     end
     
   end
@@ -61,14 +60,14 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    flash[:success] = "Member '#{@member.firstName}' deleted successfully"
+    flash[:success] = "Member '#{@member.first_name}' deleted successfully"
     redirect_to(members_path)
   end
 
   private
 
   def member_params
-    params.require(:member).permit(:firstName, :lastName, :classYear, :major, :email, :phone, :socialMediaL,
-                                   :socialMediaI, :socialMediaT, :socialMediaF, :socialMediaO, :currentCity, :company, :startDate, :endDate, position_ids: [])
+    params.require(:member).permit(:first_name, :last_name, :class_year, :major, :email, :phone, :socialMediaL,
+                                   :socialMediaI, :socialMediaT, :socialMediaF, :socialMediaO, :current_city, :company, :startDate, :endDate, position_ids: [])
   end
 end

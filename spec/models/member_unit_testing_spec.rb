@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Member, type: :model do
   subject do
     described_class.new(
-      firstName: 'Nick',
-      lastName: 'Wanner',
-      classYear: 2016,
+      first_name: 'Nick',
+      last_name: 'Wanner',
+      class_year: 2016,
       major: 'computer engineering',
       email: 'nickrwann@gmail.com',
       phone: '8323490727',
@@ -14,7 +14,7 @@ RSpec.describe Member, type: :model do
       socialMediaF: 'social media',
       socialMediaT: 'social media',
       socialMediaO: 'social media',
-      currentCity: 'College Station',
+      current_city: 'College Station',
       company: 'Dell',
       startDate: Time.new,
       endDate: Time.new,
@@ -27,17 +27,17 @@ RSpec.describe Member, type: :model do
   end
 
   it 'Is not valid without a first name' do
-    subject.firstName = nil
+    subject.first_name = nil
     expect(subject).not_to be_valid
   end
 
   it 'Is not valid without an email' do
-    subject.lastName = nil
+    subject.last_name = nil
     expect(subject).not_to be_valid
   end
 
   it 'Is not valid without a class year' do
-    subject.classYear = nil
+    subject.class_year = nil
     expect(subject).not_to be_valid
   end
 

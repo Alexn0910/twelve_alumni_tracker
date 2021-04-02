@@ -4,9 +4,9 @@ RSpec.describe 'Edit Member: ', type: :feature do
 
     before(:each) do
         Member.new(
-            firstName: "Delete",
-            lastName: "Test",
-            classYear: 2016,
+            first_name: "Delete",
+            last_name: "Test",
+            class_year: 2016,
             major: "computer engineering",
             email: "nickrwann@gmail.com",
             phone: "8323490727",
@@ -15,7 +15,7 @@ RSpec.describe 'Edit Member: ', type: :feature do
             socialMediaF: "",
             socialMediaT: "",
             socialMediaO: "",
-            currentCity: "College Station",
+            current_city: "College Station",
             company: "Dell",
             startDate: Time.new,
             endDate: Time.new,
@@ -50,7 +50,7 @@ RSpec.describe 'Edit Member: ', type: :feature do
     #         click_on ("Delete")
 
     #         # make sure  the flash notice is displayed
-    #         expect(Member.last.firstName).not_to eq("Delete")
+    #         expect(Member.last.first_name).not_to eq("Delete")
     #     end
     # end
 
@@ -63,7 +63,7 @@ RSpec.describe 'Edit Member: ', type: :feature do
     #         click_on ("Cancel")
 
     #         # make sure  the flash notice is displayed
-    #         expect(Member.last.firstName).to eq("Delete")
+    #         expect(Member.last.first_name).to eq("Delete")
 
     #         # delete it anyway 
     #         visit delete_member_path(Member.last.id)
