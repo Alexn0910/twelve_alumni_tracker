@@ -4,6 +4,12 @@ class MembersController < ApplicationController
   def index
     # render('index')
     @members = Member.order('id ASC')
+
+    @searchVal = ""
+    if params[:search] != nil
+      @searchVal = params[:search]
+      @members = Member.all.where("lower(name) LIKE ? OR lower(email) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%").order("name ASC")
+
   end
 
   def show
