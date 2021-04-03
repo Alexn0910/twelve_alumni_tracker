@@ -18,9 +18,5 @@ class Member < ApplicationRecord
   validates :startDate, presence: true, allow_blank: false
   validates :endDate, presence: true, allow_blank: false
   validates :position_ids, presence: true, allow_blank: false
-<<<<<<< HEAD
-
-=======
   validates :semester_ids, presence: true, allow_blank: false
->>>>>>> master
 end
