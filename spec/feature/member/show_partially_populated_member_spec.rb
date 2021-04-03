@@ -19,7 +19,8 @@ RSpec.describe 'Show Partially Populated Member: ', type: :feature do
             company: "Dell",
             startDate: Time.new,
             endDate: Time.new,
-            position_ids: [Position.last.id]
+            position_ids: [Position.last.id],
+            semester_ids: [Semester.last.id]
         ).save
     end
 

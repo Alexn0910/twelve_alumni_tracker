@@ -18,7 +18,8 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
             company: "",
             startDate: Time.new,
             endDate: Time.new,
-            position_ids: [Position.last.id]
+            position_ids: [Position.last.id],
+            semester_ids: [Semester.last.id]
         ).save
     end
 
