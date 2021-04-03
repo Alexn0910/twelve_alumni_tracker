@@ -4,17 +4,17 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
 
     before(:all) do
         Member.new(
-            firstName: "Nick",
-            lastName: "Wanner",
+            first_name: "Nick",
+            last_name: "Wanner",
             socialMediaL: "",
             socialMediaI: "",
             socialMediaF: "",
             socialMediaT: "",
             socialMediaO: "",
-            classYear: 2016,
+            class_year: 2016,
             major: "computer engineering",
             email: "nickrwann@gmail.com",
-            currentCity: "College Station",
+            current_city: "College Station",
             company: "",
             startDate: Time.new,
             endDate: Time.new,
@@ -31,14 +31,14 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
     describe 'When a minimally populated member is shown' do
         it 'it should have the members first name' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.firstName)
+            expect(page).to have_content(Member.last.first_name)
         end
     end
 
     describe 'When a minimally populated member is shown' do
         it 'it should have the members last name' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.lastName)
+            expect(page).to have_content(Member.last.last_name)
         end
     end
 
@@ -101,14 +101,14 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
     describe 'When a minimally populated member is shown' do
         it 'it should have the members class year' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.classYear)
+            expect(page).to have_content(Member.last.class_year)
         end
     end
 
     describe 'When a minimally populated member is shown' do
         it 'it should have the members current city' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.currentCity)
+            expect(page).to have_content(Member.last.current_city)
         end
     end
 

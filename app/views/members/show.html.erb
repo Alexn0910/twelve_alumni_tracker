@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "/stylesheets/style.css" %>
 
 <div class="jumbotron text-center">
-	<h1><%= @member.firstName %> <%= @member.lastName %></td></h1>
+	<h1><%= @member.first_name %> <%= @member.last_name %></td></h1>
 </div>
 
 <div class="container text-center">
@@ -70,7 +70,7 @@
 
         <tr>
             <th>Class Year</th>
-            <td><%= @member.classYear %></td>
+            <td><%= @member.class_year %></td>
         </tr>
         
         <%# ------------ Location & Employment ------------ %>
@@ -80,7 +80,7 @@
 
         <tr>
             <th>Current City</th>
-            <td><%= @member.currentCity %></td>
+            <td><%= @member.current_city %></td>
         </tr>
 		<% if (@member.company.length != 0) then %>
 			<tr>

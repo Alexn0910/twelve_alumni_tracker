@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 2021_03_31_185023) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string "firstName"
-    t.string "lastName"
-    t.integer "classYear"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "class_year"
     t.string "major"
     t.string "email"
     t.string "phone"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_185023) do
     t.string "socialMediaT"
     t.string "socialMediaF"
     t.string "socialMediaO"
-    t.string "currentCity"
+    t.string "current_city"
     t.string "company"
     t.datetime "startDate"
     t.datetime "endDate"
