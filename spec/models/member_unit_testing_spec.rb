@@ -18,7 +18,8 @@ RSpec.describe Member, type: :model do
       company: 'Dell',
       startDate: Time.new,
       endDate: Time.new,
-      position_ids: [Position.last.id]
+      position_ids: [Position.last.id],
+      semester_ids: [Semester.last.id]
     )
   end
 

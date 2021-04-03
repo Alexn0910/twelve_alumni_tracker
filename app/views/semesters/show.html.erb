@@ -2,15 +2,15 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @position.name %>
+  <%= @semester.name %>
 </p>
 
 <p>
   <strong>Members:</strong>
-  <% @position.members.each do |b| %>
+  <% @semester.members.each do |b| %>
     <li><%= b.firstName %> <%= b.lastName %></li>
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_position_path(@position) %> |
-<%= link_to 'Back', positions_path %>
+<%= link_to 'Edit', edit_semester_path(@semester) %> |
+<%= link_to 'Back', semesters_path %>

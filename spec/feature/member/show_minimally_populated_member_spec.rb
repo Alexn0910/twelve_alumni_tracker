@@ -6,20 +6,20 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
         Member.new(
             first_name: "Nick",
             last_name: "Wanner",
+            socialMediaL: "",
+            socialMediaI: "",
+            socialMediaF: "",
+            socialMediaT: "",
+            socialMediaO: "",
             class_year: 2016,
             major: "computer engineering",
             email: "nickrwann@gmail.com",
-            phone: "8323490727",
-            socialMediaL: "social media",
-            socialMediaI: "social media",
-            socialMediaF: "social media",
-            socialMediaT: "social media",
-            socialMediaO: "social media",
             current_city: "College Station",
-            company: "Dell",
+            company: "",
             startDate: Time.new,
             endDate: Time.new,
-            position_ids: [Position.last.id]
+            position_ids: [Position.last.id],
+            semester_ids: [Semester.last.id]
         ).save
     end
 
@@ -28,119 +28,105 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
         sign_in @admin
     end
 
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members first name' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.first_name)
         end
     end
 
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members last name' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.last_name)
         end
     end
 
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members email' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.email)
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members phone number' do
+    describe 'When a minimally populated member is shown' do
+        it 'it should not have the social media section' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.phone)
+            expect(page).not_to have_content("Social Media")
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the social media section' do
+    describe 'When a minimally populated member is shown' do
+        it 'it should not have the LinkedIn section' do
             visit member_path(Member.last.id)
-            expect(page).to have_content("Social Media")
+            expect(page).not_to have_content("LinkedIn")
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members LinkedIn' do
+    describe 'When a minimally populated member is shown' do
+        it 'it should not have the Instagram section' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.socialMediaL)
+            expect(page).not_to have_content("Instagram")
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members Instagram' do
+    describe 'When a minimally populated member is shown' do
+        it 'it should not have the Facebook section' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.socialMediaI)
+            expect(page).not_to have_content("Facebook")
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members Facebook' do
+    describe 'When a minimally populated member is shown' do
+        it 'it should not have the Twitter section' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.socialMediaF)
+            expect(page).not_to have_content("Twitter")
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members Twitter' do
+    describe 'When a minimally populated member is shown' do
+        it 'it should not have the Other section' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.socialMediaT)
+            expect(page).not_to have_content("Other")
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members other social media' do
-            visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.socialMediaO)
-        end
-    end
-
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members major' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.major)
         end
     end
 
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members class year' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.class_year)
         end
     end
 
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members current city' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.current_city)
         end
     end
 
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members company' do
-            visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.company)
-        end
-    end
-
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members join date' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.startDate.strftime("%B %Y"))
         end
     end
 
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members end date' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.endDate.strftime("%B %Y"))
         end
     end
 
-    describe 'When a fully populated member is shown' do
+    describe 'When a minimally populated member is shown' do
         it 'it should have the members positions' do
 
             visit member_path(Member.last.id)

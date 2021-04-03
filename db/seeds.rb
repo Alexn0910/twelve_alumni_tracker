@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Position.create([{ name: 'President' }, { name: 'Vice President' }, { name: 'Fundraising Chair' }, { name: 'Social Chair' },
                  { name: 'PR Chair' }, { name: 'Spirit Chair' }, { name: 'Member' }])
+
+Semester.create([{ name: 'Fall 2019' }, { name: 'Spring 2020' }])

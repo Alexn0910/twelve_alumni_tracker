@@ -16,6 +16,7 @@ RSpec.describe 'Add Member: ', type: :feature do
       fill_in 'member_current_city', with: 'College Station'
       fill_in 'member_company', with: 'Dell'
       find(:css, '#member_position_ids_1').set(true)
+      find(:css, '#member_semester_ids_1').set(true)
 
       click_on('Submit')
 

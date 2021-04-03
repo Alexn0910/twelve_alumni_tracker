@@ -1,5 +1,6 @@
 class Member < ApplicationRecord
   has_and_belongs_to_many :positions
+  has_and_belongs_to_many :semesters
 
   validates :first_name, presence: true, allow_blank: false
   validates :last_name, presence: true, allow_blank: false
@@ -17,5 +18,9 @@ class Member < ApplicationRecord
   validates :startDate, presence: true, allow_blank: false
   validates :endDate, presence: true, allow_blank: false
   validates :position_ids, presence: true, allow_blank: false
+<<<<<<< HEAD
 
+=======
+  validates :semester_ids, presence: true, allow_blank: false
+>>>>>>> master
 end
