@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :semesters
   root 'members#index'
   devise_for :admins, controllers: { omniauth_callbacks: 'admins/omniauth_callbacks' }
   devise_scope :admin do
