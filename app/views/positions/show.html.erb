@@ -8,7 +8,7 @@
 <p>
   <strong>Members:</strong>
   <% @position.members.each do |b| %>
-    <li><%= b.first_name %> <%= b.last_name %></li>
+    <li><%= b.first_name %> <%= b.last_name %> | <%= link_to("Show", member_path(b), :class => 'action show') %></li>
   <% end %>
 </p>
 
