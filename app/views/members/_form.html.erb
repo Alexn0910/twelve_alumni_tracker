@@ -8,11 +8,11 @@
         </tr>
         <tr>
             <th>First Name<span class="asterisk">*</span></th>
-            <td><%= f.text_field(:firstName) %></td>
+            <td><%= f.text_field(:first_name) %></td>
         </tr>
         <tr>
             <th>Last Name<span class="asterisk">*</span></th>
-            <td><%= f.text_field(:lastName) %></td>
+            <td><%= f.text_field(:last_name) %></td>
         </tr>
         <tr>
             <th>Email<span class="asterisk">*</span></th>
@@ -58,7 +58,7 @@
 
         <tr>
             <th>Class Year<span class="asterisk">*</span></th>
-            <td><%= f.select :classYear, [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025] %></td>
+            <td><%= f.select :class_year, [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025] %></td>
         </tr>
         <%# ------------ Location & Employment ------------ %>
         <tr>
@@ -67,7 +67,7 @@
 
         <tr>
             <th>Current City</th>
-            <td><%= f.text_field(:currentCity) %></td>
+            <td><%= f.text_field(:current_city) %></td>
         </tr>
         <tr>
             <th>Company</th>

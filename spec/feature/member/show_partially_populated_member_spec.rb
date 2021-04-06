@@ -4,9 +4,9 @@ RSpec.describe 'Show Partially Populated Member: ', type: :feature do
 
     before(:all) do
         Member.new(
-            firstName: "Nick",
-            lastName: "Wanner",
-            classYear: 2016,
+            first_name: "Nick",
+            last_name: "Wanner",
+            class_year: 2016,
             major: "computer engineering",
             email: "nickrwann@gmail.com",
             phone: "8323490727",
@@ -15,7 +15,7 @@ RSpec.describe 'Show Partially Populated Member: ', type: :feature do
             socialMediaF: "",
             socialMediaT: "",
             socialMediaO: "",
-            currentCity: "College Station",
+            current_city: "College Station",
             company: "Dell",
             startDate: Time.new,
             endDate: Time.new,
@@ -32,14 +32,14 @@ RSpec.describe 'Show Partially Populated Member: ', type: :feature do
     describe 'When a fully populated member is shown' do
         it 'it should have the members first name' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.firstName)
+            expect(page).to have_content(Member.last.first_name)
         end
     end
 
     describe 'When a fully populated member is shown' do
         it 'it should have the members last name' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.lastName)
+            expect(page).to have_content(Member.last.last_name)
         end
     end
 
@@ -88,14 +88,14 @@ RSpec.describe 'Show Partially Populated Member: ', type: :feature do
     describe 'When a fully populated member is shown' do
         it 'it should have the members class year' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.classYear)
+            expect(page).to have_content(Member.last.class_year)
         end
     end
 
     describe 'When a fully populated member is shown' do
         it 'it should have the members current city' do
             visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.currentCity)
+            expect(page).to have_content(Member.last.current_city)
         end
     end
 
