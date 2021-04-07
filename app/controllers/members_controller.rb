@@ -2,9 +2,7 @@ class MembersController < ApplicationController
   # layout false
 
   def index
-    # render('index')
-    # @members = Member.order('id ASC')
-
+    
     @searchVal = ""
     if params[:search] != nil
       @searchVal = params[:search]

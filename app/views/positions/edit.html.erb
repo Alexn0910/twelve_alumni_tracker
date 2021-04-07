@@ -1,6 +1,31 @@
-<h1>Editing Position</h1>
+<%= stylesheet_link_tag "/stylesheets/style.css" %>
 
-<%= render 'form', position: @position %>
+<div class="jumbotron text-center">
+	<h1>Edit Position</h1>
+</div>
 
-<%= link_to 'Show', @position %> |
-<%= link_to 'Back', positions_path %>
+<div class="container text-center mb-3">
+	<h6>Fields marked with (<span class="asterisk">*</span>) are required.</h6>
+</div>
+
+<%= form_for(@position) do |f| %>
+
+	<div class="container">
+		<div class="mt-4">
+			<%= render(:partial => 'form', :locals => {:f => f})%>
+		</div>
+	</div>
+	
+	<div class="container text-center mb-5 mt-5">
+		<div class="row">
+			<div class="col-sm order-sm-2">
+				<%= f.submit :Submit, class: 'btn btn-success' %>
+				<% end %>
+			</div>
+			<div class="col-sm order-sm-1">
+				<div type="button" class="btn btn-danger">
+					<%= link_to("Cancel", positions_path, style:"color: white") %>
+				</div>
+			</div>
+		</div>
+	</div>

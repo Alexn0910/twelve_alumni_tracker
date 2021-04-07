@@ -1,27 +1,40 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag "/stylesheets/style.css" %>
 
-<h1>Positions</h1>
+<div class="jumbotron text-center mb-4">
+	<h1 class="display-1">Positions</h1>
+	<div class="btn btn-dark">
+		<%= link_to("Add New Position", new_position_path, style:"color: white", value:"AddNewPositionBtn") %>
+	</div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container text-center">
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="table-dark">	
+			<tr>
+				<th class = "text-center">Position</th>
+				<th class=""> <i class="fa fa-ellipsis-v" aria-hidden="true"></i></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @positions.each do |position| %>
+			<tr>
+				<td><%= position.name %></td>
+				<td>
+					<div class="dropdown show" style="display:block; width:100%; height:100%; color: black;">
+						<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display:block; width:100%; color: black;">
 
-  <tbody>
-    <% @positions.each do |position| %>
-      <tr>
-        <td><%= position.name %></td>
-        <td><%= link_to 'Show', position %></td>
-        <td><%= link_to 'Edit', edit_position_path(position) %></td>
-        <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+							<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+						</a>
 
-<br>
-
-<%= link_to 'New Position', new_position_path %>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="<%=position_path(position)%>">Show</a>
+							<a class="dropdown-item" href="<%=edit_position_path(position)%>">Edit</a>
+							<%= link_to "Delete", position_path(position), method: :delete, data: {confirm: "Are you sure you wish to delete this position?"}, :class => "dropdown-item" %>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
