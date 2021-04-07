@@ -17,8 +17,6 @@ RSpec.describe 'Edit Member: ', type: :feature do
             socialMediaO: "",
             current_city: "College Station",
             company: "Dell",
-            startDate: Time.new,
-            endDate: Time.new,
             position_ids: [Position.last.id],
             semester_ids: [Semester.last.id]
         ).save

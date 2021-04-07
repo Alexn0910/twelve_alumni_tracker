@@ -17,8 +17,6 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
             socialMediaO: "social media",
             current_city: "College Station",
             company: "Dell",
-            startDate: Time.new,
-            endDate: Time.new,
             position_ids: [Position.last.id],
             semester_ids: [Semester.last.id]
         ).save
@@ -124,20 +122,6 @@ RSpec.describe 'Show Populated Member: ', type: :feature do
         it 'it should have the members company' do
             visit member_path(Member.last.id)
             expect(page).to have_content(Member.last.company)
-        end
-    end
-
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members join date' do
-            visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.startDate.strftime("%B %Y"))
-        end
-    end
-
-    describe 'When a fully populated member is shown' do
-        it 'it should have the members end date' do
-            visit member_path(Member.last.id)
-            expect(page).to have_content(Member.last.endDate.strftime("%B %Y"))
         end
     end
 

@@ -93,14 +93,6 @@
             <th colspan="2" style="background-color: #353A3F; color: white;">Twelve Organization Involvement</th>
         </tr>
         <tr>
-            <th>Join date</th>
-            <td><%= @member.startDate.strftime("%B %Y") %></td>
-        </tr>
-        <tr>
-            <th>End date</th>
-            <td><%= @member.endDate.strftime("%B %Y") %></td>
-        </tr>
-        <tr>
             <th>Positions Held</th>
 			<td>
 				<% @member.positions.each do |b| %>
