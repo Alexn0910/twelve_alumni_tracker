@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Semester, type: :model do
+RSpec.describe Position, type: :model do
   subject do
     described_class.new(
-      name: 'Fall 1999'
+      name: 'Fall 2020'
     )
   end
 

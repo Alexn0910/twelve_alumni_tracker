@@ -11,7 +11,7 @@ RSpec.describe 'Add Semester: ', type: :feature do
 
       fill_in 'semester_name', with: 'Test_name'
 
-      click_on('Create Semester')
+      click_on('Submit')
 
       expect(page).to have_content('Test_name')
     end
