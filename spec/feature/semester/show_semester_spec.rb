@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Show Populated Member: ', type: :feature do
+RSpec.describe 'Show Populated Semester: ', type: :feature do
 
     before(:all) do
         Semester.new(
