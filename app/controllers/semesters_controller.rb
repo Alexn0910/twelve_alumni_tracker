@@ -45,11 +45,10 @@ class SemestersController < ApplicationController
 
   # DELETE /semesters/1 or /semesters/1.json
   def destroy
+    @semester = Semester.find(params[:id])
     @semester.destroy
-    respond_to do |format|
-      format.html { redirect_to semesters_url, notice: "Semester was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Semester '#{@semester.name}' deleted successfully"
+    redirect_to(semesters_path)
   end
 
   private

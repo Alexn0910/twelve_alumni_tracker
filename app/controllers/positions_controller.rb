@@ -42,11 +42,10 @@ class PositionsController < ApplicationController
 
   # DELETE /positions/1 or /positions/1.json
   def destroy
+    @position = Position.find(params[:id])
     @position.destroy
-    respond_to do |format|
-      format.html { redirect_to positions_url, notice: 'Position was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Position '#{@position.name}' deleted successfully"
+    redirect_to(positions_path)
   end
 
   private

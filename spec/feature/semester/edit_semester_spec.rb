@@ -20,10 +20,10 @@ RSpec.describe 'Edit Semester: ', type: :feature do
             visit edit_semester_path(Semester.last.id)
 
             # submit the edit form
-            click_on ("Update Semester")
+            click_on ("Submit")
 
             # make sure  the flash notice is displayed
-            expect(page).to have_content("Semester was successfully updated.")
+            expect(page).to have_content("Semester updated successfully")
         end
     end
 
@@ -37,7 +37,7 @@ RSpec.describe 'Edit Semester: ', type: :feature do
             fill_in "semester_name", with: "NewTest_name"
 
             # submit the edit form
-            click_on ("Update Semester")
+            click_on ("Submit")
 
             # make sure  the flash notice is displayed
             expect(page).to have_content("NewTest_name")
@@ -54,10 +54,10 @@ RSpec.describe 'Edit Semester: ', type: :feature do
             fill_in "semester_name", with: ""
 
             # submit the edit form
-            click_on ("Update Semester")
+            click_on ("Submit")
             
             # make sure  the flash notice is displayed
-            expect(page).to have_content("Name can't be blank")
+            expect(page).to have_content("Fields marked with (*) are required.")
         end
     end
 

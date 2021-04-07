@@ -1,28 +1,10 @@
 require 'rails_helper'
 
-## THIS NEEDS TO BE COMPLETED - CURRENTLY A COPY OF MEMBER TESTS
-
-RSpec.describe 'Edit Member: ', type: :feature do
+RSpec.describe 'Edit Position: ', type: :feature do
 
     before(:all) do
-        Member.new(
-            first_name: "Nick",
-            last_name: "Wanner",
-            class_year: 2016,
-            major: "computer engineering",
-            email: "nickrwann@gmail.com",
-            phone: "8323490727",
-            socialMediaL: "social media",
-            socialMediaI: "social media",
-            socialMediaF: "",
-            socialMediaT: "",
-            socialMediaO: "",
-            current_city: "College Station",
-            company: "Dell",
-            startDate: Time.new,
-            endDate: Time.new,
-            position_ids: [Position.last.id],
-            semester_ids: [Semester.last.id]
+        Position.new(
+            name: "Nick"
         ).save
     end
 
@@ -31,47 +13,44 @@ RSpec.describe 'Edit Member: ', type: :feature do
         sign_in @admin
     end
 
-    describe 'When a member is successfully edited' do
+    describe 'When a position is successfully edited' do
 
         it 'it should flash a success notice' do  
             # go to edit page   
-            visit edit_member_path(Member.last.id)
+            visit edit_position_path(Position.last.id)
 
             # submit the edit form
             click_on ("Submit")
 
-            # make sure  the flash notice is displayed
-            expect(page).to have_content("Member updated successfully")
+            expect(page).to have_content("Position updated successfully")
         end
+
     end
 
-    describe 'When a member is successfully edited' do
-        it 'the updated member should display the new details' do  
+    describe 'When a position is successfully edited' do
+        it 'the updated position should display the new details' do  
             
             # go to edit page   
-            visit edit_member_path(Member.last.id)
+            visit edit_position_path(Position.last.id)
 
-            # edit the member
-            fill_in "member_first_name", with: "NewTestfirst_name"
-            fill_in "member_last_name", with: "NewTestlast_name"
+            # edit the position
+            fill_in "position_name", with: "NewTestname"
 
             # submit the edit form
             click_on ("Submit")
 
-            # make sure  the flash notice is displayed
-            expect(page).to have_content("NewTestfirst_name")
-            expect(page).to have_content("NewTestlast_name")
+            expect(page).to have_content("NewTestname")
         end
     end
 
-    describe 'When a member is unsuccessfully edited' do
+    describe 'When a position is unsuccessfully edited' do
         it 'the page should not change' do  
             
             # go to edit page   
-            visit edit_member_path(Member.last.id)
+            visit edit_position_path(Position.last.id)
 
-            # edit the member
-            fill_in "member_first_name", with: ""
+            # edit the position
+            fill_in "position_name", with: ""
 
             # submit the edit form
             click_on ("Submit")
