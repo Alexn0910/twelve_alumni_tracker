@@ -68,6 +68,6 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:first_name, :last_name, :class_year, :major, :email, :phone, :socialMediaL,
-                                   :socialMediaI, :socialMediaT, :socialMediaF, :socialMediaO, :current_city, :company, :startDate, :endDate, position_ids: [], semester_ids: [])
+                                   :socialMediaI, :socialMediaT, :socialMediaF, :socialMediaO, :current_city, :company, position_ids: [], semester_ids: [])
   end
 end

@@ -78,14 +78,6 @@
             <th colspan="2" style="background-color: #353A3F; color: white;">Twelve Organization Involvement</th>
         </tr>
         <tr>
-            <th>Join date<span class="asterisk">*</span></th>
-            <td><%= f.date_select(:startDate, order: [:month, :year]) %></td>
-        </tr>
-        <tr>
-            <th>End date<span class="asterisk">*</span></th>
-            <td><%= f.date_select(:endDate, order: [:month, :year]) %></td>
-        </tr>
-        <tr>
             <th>Positions Held<span class="asterisk">*</span></th>
             <td>
                 <%= f.collection_check_boxes :position_ids, Position.all, :id, :name do |b| %>

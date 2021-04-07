@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 2021_03_31_185023) do
     t.string "socialMediaO"
     t.string "current_city"
     t.string "company"
-    t.datetime "startDate"
-    t.datetime "endDate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
