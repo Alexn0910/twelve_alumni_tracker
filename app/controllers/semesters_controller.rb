@@ -21,29 +21,25 @@ class SemestersController < ApplicationController
 
   # POST /semesters or /semesters.json
   def create
+
     @semester = Semester.new(semester_params)
 
-    respond_to do |format|
-      if @semester.save
-        format.html { redirect_to @semester, notice: "Semester was successfully created." }
-        format.json { render :show, status: :created, location: @semester }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @semester.errors, status: :unprocessable_entity }
-      end
+    if @semester.save
+      flash[:success] = 'Semester added successfully'
+      redirect_to(semesters_path)
+    else
+      render('new')
     end
   end
 
   # PATCH/PUT /semesters/1 or /semesters/1.json
   def update
-    respond_to do |format|
-      if @semester.update(semester_params)
-        format.html { redirect_to @semester, notice: "Semester was successfully updated." }
-        format.json { render :show, status: :ok, location: @semester }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @semester.errors, status: :unprocessable_entity }
-      end
+    @semester = Semester.find(params[:id])
+    if @semester.update(semester_params)
+      flash[:success] = 'Semester updated successfully'
+      redirect_to(semesters_path)
+    else
+      render('edit')
     end
   end
 

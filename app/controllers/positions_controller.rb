@@ -21,27 +21,22 @@ class PositionsController < ApplicationController
   def create
     @position = Position.new(position_params)
 
-    respond_to do |format|
-      if @position.save
-        format.html { redirect_to @position, notice: 'Position was successfully created.' }
-        format.json { render :show, status: :created, location: @position }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @position.errors, status: :unprocessable_entity }
-      end
+    if @position.save
+      flash[:success] = 'Position added successfully'
+      redirect_to(positions_path)
+    else
+      render('new')
     end
   end
 
   # PATCH/PUT /positions/1 or /positions/1.json
   def update
-    respond_to do |format|
-      if @position.update(position_params)
-        format.html { redirect_to @position, notice: 'Position was successfully updated.' }
-        format.json { render :show, status: :ok, location: @position }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @position.errors, status: :unprocessable_entity }
-      end
+    @position = Position.find(params[:id])
+    if @position.update(position_params)
+      flash[:success] = 'Position updated successfully'
+      redirect_to(positions_path)
+    else
+      render('edit')
     end
   end
 
