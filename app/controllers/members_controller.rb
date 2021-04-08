@@ -6,8 +6,11 @@ class MembersController < ApplicationController
     @searchVal = ""
     if params[:search] != nil
       @searchVal = params[:search]
-      @members = Member.all.where(["lower(first_name) LIKE ? OR lower(last_name) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%"]).order("id ASC")
-    else
+      @members = Member.all.where(["lower(first_name) LIKE ? OR lower(last_name) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%"]).order("id ASC").and(Member.all.where(alumniYet: true))
+	  if ((current_admin.email == "twelvetamu@gmail.com") || (current_admin.email == "rwilson@tamu.edu") || (current_admin.email == "terryho618@tamu.edu") || (current_admin.email == "nguyen.alex@tamu.edu") || (current_admin.email == "wann212@tamu.edu") || (current_admin.email == "keerthana96@tamu.edu"))
+		@members = Member.all.where(["lower(first_name) LIKE ? OR lower(last_name) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%"]).order("id ASC")
+	  end
+	else
       @members = Member.all.order('id ASC')
     end
     
@@ -66,6 +69,6 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:first_name, :last_name, :class_year, :major, :email, :phone, :socialMediaL,
-                                   :socialMediaI, :socialMediaT, :socialMediaF, :socialMediaO, :current_city, :company, position_ids: [], semester_ids: [])
+                                   :socialMediaI, :socialMediaT, :socialMediaF, :socialMediaO, :current_city, :company, :alumniYet, position_ids: [], semester_ids: [])
   end
 end

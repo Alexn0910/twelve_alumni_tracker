@@ -17,4 +17,5 @@ class Member < ApplicationRecord
   validates :company, presence: true, allow_blank: true
   validates :position_ids, presence: true, allow_blank: false
   validates :semester_ids, presence: true, allow_blank: false
+  validates :alumniYet, presence: true, allow_blank: true
 end
