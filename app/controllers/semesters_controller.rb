@@ -1,5 +1,5 @@
 class SemestersController < ApplicationController
-  before_action :set_semester, only: %i[ show edit update destroy ]
+  before_action :set_semester, only: %i[show edit update destroy]
 
   # GET /semesters or /semesters.json
   def index
@@ -7,8 +7,7 @@ class SemestersController < ApplicationController
   end
 
   # GET /semesters/1 or /semesters/1.json
-  def show
-  end
+  def show; end
 
   # GET /semesters/new
   def new
@@ -16,12 +15,10 @@ class SemestersController < ApplicationController
   end
 
   # GET /semesters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /semesters or /semesters.json
   def create
-
     @semester = Semester.new(semester_params)
 
     if @semester.save
@@ -52,13 +49,14 @@ class SemestersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_semester
-      @semester = Semester.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def semester_params
-      params.require(:semester).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_semester
+    @semester = Semester.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def semester_params
+    params.require(:semester).permit(:name)
+  end
 end

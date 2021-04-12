@@ -15,5 +15,4 @@ RSpec.describe Semester, type: :model do
     subject.name = nil
     expect(subject).not_to be_valid
   end
-
 end

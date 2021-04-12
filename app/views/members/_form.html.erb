@@ -58,7 +58,7 @@
 
         <tr>
             <th>Class Year<span class="asterisk">*</span></th>
-            <td><%= f.select :class_year, [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], {}, { :class => "custom-select w-auto" }%> </td>
+            <td><%= f.select :class_year, [*2016..2050], {}, { :class => "custom-select w-auto" }%> </td>
         </tr>
         <%# ------------ Location & Employment ------------ %>
         <tr>
@@ -77,6 +77,14 @@
         <tr>
             <th colspan="2" style="background-color: #353A3F; color: white;">Twelve Organization Involvement</th>
         </tr>
+		<% if ((current_admin.email == "twelvetamu@gmail.com") || (current_admin.email == "rwilson@tamu.edu") || (current_admin.email == "terryho618@tamu.edu") || (current_admin.email == "nguyen.alex@tamu.edu") || (current_admin.email == "wann212@tamu.edu") || (current_admin.email == "keerthana96@tamu.edu")) %>
+			<tr>
+				<th>Alumni Yet?<span class="asterisk">*</span></th>
+				<td>
+					<%= f.check_box :alumniYet %>
+				</td>    
+			</tr>
+		<% end %>
         <tr>
             <th>Positions Held<span class="asterisk">*</span></th>
             <td>
