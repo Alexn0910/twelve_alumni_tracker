@@ -1,0 +1,74 @@
+<%= stylesheet_link_tag "/stylesheets/style.css" %>
+
+<div class="jumbotron text-center mb-4">
+  <h1 class="display-1">Help</h1>
+</div>
+
+<div class="container text-center">
+
+	<h3>General Information</h3>
+		<p>Hello, this web application is called the Twelve Alumni Tracker. The app allows users to view 
+		a database of Twelve alumni. From the homepage, each alumni's name and class year are visible. Clicking 
+		"show" on an entry will show the user more information about that alumnus such as social media links 
+		and which positions they held during their time in Twelve. Access to the app is restricted to people who 
+		are or have been in the organization. Outsiders will be denied access on the login page. However, it is
+		up to the Twelve admin account to keep records updated such as who recently joined as a member and who
+		has recently graduated. The purpose of the app is to provide a greater sense of community within the
+		organization. Please enjoy the app.</p>
+
+</div>
+
+<div class="container text-center">
+
+	<h3>Members</h3>
+		<p>Members are granted viewing access to the database. However, the database is meant for alumni, so members 
+		will not have a profile until they graduate.</p>
+
+</div>
+
+<div class="container text-center">
+
+	<h3>Alumni</h3>
+		<p>Alumni have more privileges than members. They have the same viewing access to everything, but they can also 
+		edit and delete their own personal profile. It is not possible for an alumnus to edit/delete other's profiles. 
+		In the edit page, they are welcome to fill out whatever information they like. Some fields are mandatory like 
+		name, email, and semesters of involvement while others are optional such as social media links. Be very careful 
+		when editing the email field. The email listed there is what the system checks when you log in. Thus, if you enter
+		an invalid email, you will be denied access at the login page. If this does happen, email the Twelve admin. The admin 
+		account can view and edit anyone's profile, so they can fix your email field for you.</p>
+
+</div>
+
+<div class="container text-center">
+
+	<h3>The 3 Tabs: Alumni, Semesters, Positions</h3>
+		<p>Members and alumni alike have access to all 3 tabs. The alumni tab displays a list of the Twelve alumni. There
+		is even a search button which can be used to find a certain alumnus more easily. The search button checks first name
+		and last name but no other fields. The semesters tab shows a list of semesters. Clicking "show" on a semester will show
+		the user a list of alumni that were in Twelve during that semester. The positions tab shows a list of positions.
+		Clicking "show" on a position will show the user a list of alumni that held that position at some point in time.</p>
+
+</div>
+
+<% if ((current_admin.email == "twelvetamu@gmail.com") || (current_admin.email == "rwilson@tamu.edu") || (current_admin.email == "terryho618@tamu.edu") || (current_admin.email == "nguyen.alex@tamu.edu") || (current_admin.email == "wann212@tamu.edu") || (current_admin.email == "keerthana96@tamu.edu")) %>
+
+	<div class="container text-center">
+
+		<h3>Admin Instructions</h3>
+			<p>Admins have the sole access privilege of adding new entries to the database. They should add a new entry for someone
+			whenever they become a member of Twelve. Only fill out the mandatory fields, ensuring that the email you write down for
+			them is the one that they will use to log in. Admins can see an attribute hidden to everyone else - the Alumni Yet? 
+			attribute. When adding a new member, this checkbox should be unchecked. Any entries which have the Alumni Yet? attribute 
+			unchecked are considered members. This means their entries will only be viewable by admins and no one else. When members 
+			graduate, it is the admin's job to go in and check the Alumni Yet? checkbox signifying that the member is now an alumni. 
+			This will make that person's entry viewable by all of the members and alumni. That person will also be able to go in and
+			edit their entry now. Admins are also tasked with creating semesters. Simply click the add new semester button in the 
+			semesters tab, enter a name for the semester like "Fall 2019", and submit. This will allow alumni to check that semester 
+			in their profile to show that they were a member of Twelve during that semester. Lastly, admins are also tasked with
+			creating positions. Simply click the add new position button in the positions tab when a new position should be created.
+			Similarly, enter a name for the position like "Vice President", and submit. This will allow alumni to check that position 
+			in their profile to show that at one point, they held that position. The admin email is twelvetamu@gmail.com</p>
+
+	</div>
+	
+<% end %>

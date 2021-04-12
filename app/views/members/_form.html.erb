@@ -58,7 +58,7 @@
 
         <tr>
             <th>Class Year<span class="asterisk">*</span></th>
-            <td><%= f.select :class_year, [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], {}, { :class => "custom-select w-auto" }%> </td>
+            <td><%= f.select :class_year, [*2016..2050], {}, { :class => "custom-select w-auto" }%> </td>
         </tr>
         <%# ------------ Location & Employment ------------ %>
         <tr>

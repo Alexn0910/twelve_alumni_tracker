@@ -16,6 +16,7 @@ RSpec.describe Member, type: :model do
       socialMediaO: 'social media',
       current_city: 'College Station',
       company: 'Dell',
+      alumniYet: true,
       position_ids: [Position.last.id],
       semester_ids: [Semester.last.id]
     )

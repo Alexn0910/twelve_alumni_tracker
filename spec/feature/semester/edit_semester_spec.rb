@@ -1,64 +1,59 @@
 require 'rails_helper'
 
 RSpec.describe 'Edit Semester: ', type: :feature do
+  before(:all) do
+    Semester.new(
+      name: 'Fall 2000'
+    ).save
+  end
 
-    before(:all) do
-        Semester.new(
-            name: "Fall 2000",
-        ).save
+  before do
+    @admin = Admin.create(email: 'twelvetamu@gmail.com')
+    sign_in @admin
+  end
+
+  describe 'When a semester is successfully edited' do
+    it 'flashes a success notice' do
+      # go to edit page
+      visit edit_semester_path(Semester.last.id)
+
+      # submit the edit form
+      click_on('Submit')
+
+      # make sure  the flash notice is displayed
+      expect(page).to have_content('Semester updated successfully')
     end
+  end
 
-    before(:each) do
-        @admin = Admin.create(email:"test@gmail.com")
-        sign_in @admin
+  describe 'When a semester is successfully edited' do
+    it 'the updated semester should display the new details' do
+      # go to edit page
+      visit edit_semester_path(Semester.last.id)
+
+      # edit the semester
+      fill_in 'semester_name', with: 'NewTest_name'
+
+      # submit the edit form
+      click_on('Submit')
+
+      # make sure  the flash notice is displayed
+      expect(page).to have_content('NewTest_name')
     end
+  end
 
-    describe 'When a semester is successfully edited' do
+  describe 'When a semester is unsuccessfully edited' do
+    it 'the page should not change' do
+      # go to edit page
+      visit edit_semester_path(Semester.last.id)
 
-        it 'it should flash a success notice' do  
-            # go to edit page   
-            visit edit_semester_path(Semester.last.id)
+      # edit the semester
+      fill_in 'semester_name', with: ''
 
-            # submit the edit form
-            click_on ("Submit")
+      # submit the edit form
+      click_on('Submit')
 
-            # make sure  the flash notice is displayed
-            expect(page).to have_content("Semester updated successfully")
-        end
+      # make sure  the flash notice is displayed
+      expect(page).to have_content('Fields marked with (*) are required.')
     end
-
-    describe 'When a semester is successfully edited' do
-        it 'the updated semester should display the new details' do  
-            
-            # go to edit page   
-            visit edit_semester_path(Semester.last.id)
-
-            # edit the semester
-            fill_in "semester_name", with: "NewTest_name"
-
-            # submit the edit form
-            click_on ("Submit")
-
-            # make sure  the flash notice is displayed
-            expect(page).to have_content("NewTest_name")
-        end
-    end
-
-    describe 'When a semester is unsuccessfully edited' do
-        it 'the page should not change' do  
-            
-            # go to edit page   
-            visit edit_semester_path(Semester.last.id)
-
-            # edit the semester
-            fill_in "semester_name", with: ""
-
-            # submit the edit form
-            click_on ("Submit")
-            
-            # make sure  the flash notice is displayed
-            expect(page).to have_content("Fields marked with (*) are required.")
-        end
-    end
-
+  end
 end
