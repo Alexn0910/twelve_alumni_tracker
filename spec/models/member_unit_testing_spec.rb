@@ -16,8 +16,7 @@ RSpec.describe Member, type: :model do
       socialMediaO: 'social media',
       current_city: 'College Station',
       company: 'Dell',
-      startDate: Time.new,
-      endDate: Time.new,
+      alumniYet: true,
       position_ids: [Position.last.id],
       semester_ids: [Semester.last.id]
     )
@@ -44,16 +43,6 @@ RSpec.describe Member, type: :model do
 
   it 'Is not valid without an email' do
     subject.email = nil
-    expect(subject).not_to be_valid
-  end
-
-  it 'Is not valid without a start date' do
-    subject.startDate = nil
-    expect(subject).not_to be_valid
-  end
-
-  it 'Is not valid without an end date' do
-    subject.endDate = nil
     expect(subject).not_to be_valid
   end
 

@@ -1,22 +1,15 @@
-<%= form_with(model: position) do |form| %>
-  <% if position.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(position.errors.count, "error") %> prohibited this position from being saved:</h2>
+<%= error_messages_for(f.object) %>
 
-      <ul>
-        <% position.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="container text-center">
+	<table class="table table-hover">
+    <%# ------------ POSITION NAME ------------ %>
+    <tr>
+        <th colspan="2" style="background-color: #353A3F; color: white;">Position Information</th>
+    </tr>
+    <tr>
+        <th>Name<span class="asterisk">*</span></th>
+        <td><%= f.text_field(:name, :class => "form-control m-auto") %></td>
+      </tr>
+  </table>
+</div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

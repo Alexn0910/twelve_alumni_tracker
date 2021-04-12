@@ -29,7 +29,6 @@ SimpleCov.start 'rails' do
   add_filter 'dashboards_controller.rb'
   add_filter 'application_job.rb'
   add_filter 'application_mailer.rb'
-
 end
 
 RSpec.configure do |config|

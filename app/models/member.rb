@@ -15,8 +15,7 @@ class Member < ApplicationRecord
   validates :socialMediaO, presence: true, allow_blank: true
   validates :current_city, presence: true, allow_blank: true
   validates :company, presence: true, allow_blank: true
-  validates :startDate, presence: true, allow_blank: false
-  validates :endDate, presence: true, allow_blank: false
   validates :position_ids, presence: true, allow_blank: false
   validates :semester_ids, presence: true, allow_blank: false
+  validates :alumniYet, presence: true, allow_blank: true
 end

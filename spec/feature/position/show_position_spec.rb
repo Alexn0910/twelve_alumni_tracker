@@ -1,6 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Show Partially Populated Member: ', type: :feature do
+## THIS NEEDS TO BE COMPLETED - CURRENTLY A COPY OF MEMBER TESTS
+
+RSpec.describe 'Show Populated Member: ', type: :feature do
   before(:all) do
     Member.new(
       first_name: 'Nick',
@@ -11,9 +13,9 @@ RSpec.describe 'Show Partially Populated Member: ', type: :feature do
       phone: '8323490727',
       socialMediaL: 'social media',
       socialMediaI: 'social media',
-      socialMediaF: '',
-      socialMediaT: '',
-      socialMediaO: '',
+      socialMediaF: 'social media',
+      socialMediaT: 'social media',
+      socialMediaO: 'social media',
       current_city: 'College Station',
       company: 'Dell',
       alumniYet: true,
@@ -73,6 +75,27 @@ RSpec.describe 'Show Partially Populated Member: ', type: :feature do
     it 'has the members Instagram' do
       visit member_path(Member.last.id)
       expect(page).to have_content(Member.last.socialMediaI)
+    end
+  end
+
+  describe 'When a fully populated member is shown' do
+    it 'has the members Facebook' do
+      visit member_path(Member.last.id)
+      expect(page).to have_content(Member.last.socialMediaF)
+    end
+  end
+
+  describe 'When a fully populated member is shown' do
+    it 'has the members Twitter' do
+      visit member_path(Member.last.id)
+      expect(page).to have_content(Member.last.socialMediaT)
+    end
+  end
+
+  describe 'When a fully populated member is shown' do
+    it 'has the members other social media' do
+      visit member_path(Member.last.id)
+      expect(page).to have_content(Member.last.socialMediaO)
     end
   end
 

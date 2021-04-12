@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "/stylesheets/style.css" %>
 
 <div class="jumbotron text-center">
-	<h1><%= @member.first_name %> <%= @member.last_name %></td></h1>
+	<h1><%= @member.first_name %> <%= @member.last_name %></h1>
 </div>
 
 <div class="container text-center">
@@ -92,14 +92,18 @@
         <tr>
             <th colspan="2" style="background-color: #353A3F; color: white;">Twelve Organization Involvement</th>
         </tr>
-        <tr>
-            <th>Join date</th>
-            <td><%= @member.startDate.strftime("%B %Y") %></td>
-        </tr>
-        <tr>
-            <th>End date</th>
-            <td><%= @member.endDate.strftime("%B %Y") %></td>
-        </tr>
+		<% if ((current_admin.email == "twelvetamu@gmail.com") || (current_admin.email == "rwilson@tamu.edu") || (current_admin.email == "terryho618@tamu.edu") || (current_admin.email == "nguyen.alex@tamu.edu") || (current_admin.email == "wann212@tamu.edu") || (current_admin.email == "keerthana96@tamu.edu")) %>
+			<tr>
+				<th>Alumni Yet?</th>
+				<td>
+					<% if (@member.alumniYet == true) %>
+						<%= "true" %>
+					<% else %>
+						<%= "false" %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
         <tr>
             <th>Positions Held</th>
 			<td>

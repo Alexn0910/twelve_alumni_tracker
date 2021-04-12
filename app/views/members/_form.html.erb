@@ -8,19 +8,19 @@
         </tr>
         <tr>
             <th>First Name<span class="asterisk">*</span></th>
-            <td><%= f.text_field(:first_name) %></td>
+            <td><%= f.text_field(:first_name, :class => "form-control w-auto m-auto") %></td>
         </tr>
         <tr>
             <th>Last Name<span class="asterisk">*</span></th>
-            <td><%= f.text_field(:last_name) %></td>
+            <td><%= f.text_field(:last_name, :class => "form-control w-auto m-auto") %></td>
         </tr>
         <tr>
             <th>Email<span class="asterisk">*</span></th>
-            <td><%= f.text_field(:email) %></td>
+            <td><%= f.text_field(:email, :class => "form-control w-auto m-auto") %></td>
         </tr>
         <tr>
             <th>Phone Number</th>
-            <td><%= f.text_field(:phone) %></td>
+            <td><%= f.text_field(:phone, :class => "form-control w-auto m-auto") %></td>
         </tr>
         <%# ------------ SOCIAL MEDIA ------------ %>
         <tr>
@@ -28,23 +28,23 @@
         </tr>
         <tr>
             <th style="border: unset;">LinkedIn:</th>
-            <td style="border: unset;"><%= f.text_field :socialMediaL, :size=>"30" %></td>
+            <td style="border: unset;"><%= f.text_field :socialMediaL, :size=>"30", :class => "form-control m-auto" %></td>
         </tr>
         <tr>
             <th style="border: unset;">Instagram:</th>
-            <td style="border: unset;"><%= f.text_field :socialMediaI, :size=>"30" %></td>
+            <td style="border: unset;"><%= f.text_field :socialMediaI, :size=>"30", :class => "form-control m-auto" %></td>
         </tr>
         <tr>
             <th style="border: unset;">Facebook:</th>
-            <td style="border: unset;"><%= f.text_field :socialMediaF, :size=>"30" %></td>
+            <td style="border: unset;"><%= f.text_field :socialMediaF, :size=>"30", :class => "form-control m-auto" %></td>
         </tr>
         <tr>
             <th style="border: unset;">Twitter:</th>
-            <td style="border: unset;"><%= f.text_field :socialMediaT, :size=>"30" %></td>
+            <td style="border: unset;"><%= f.text_field :socialMediaT, :size=>"30", :class => "form-control m-auto" %></td>
         </tr>
         <tr>
             <th style="border: unset;">Other (please specify):</th>
-            <td style="border: unset;"><%= f.text_field :socialMediaO, :size=>"30" %></td>
+            <td style="border: unset;"><%= f.text_field :socialMediaO, :size=>"30", :class => "form-control m-auto" %></td>
         </tr>
         <%# ------------ Education ------------ %>
         <tr>
@@ -53,12 +53,12 @@
 
         <tr>
             <th>Major<span class="asterisk">*</span></th>
-            <td><%= f.text_field(:major) %></td>
+            <td><%= f.text_field(:major, :class => "form-control m-auto") %></td>
         </tr>
 
         <tr>
             <th>Class Year<span class="asterisk">*</span></th>
-            <td><%= f.select :class_year, [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025] %></td>
+            <td><%= f.select :class_year, [*2016..2050], {}, { :class => "custom-select w-auto" }%> </td>
         </tr>
         <%# ------------ Location & Employment ------------ %>
         <tr>
@@ -67,24 +67,24 @@
 
         <tr>
             <th>Current City</th>
-            <td><%= f.text_field(:current_city) %></td>
+            <td><%= f.text_field(:current_city, :class => "form-control m-auto") %></td>
         </tr>
         <tr>
             <th>Company</th>
-            <td><%= f.text_field(:company) %></td>
+            <td><%= f.text_field(:company, :class => "form-control m-auto") %></td>
         </tr>
         <%# ------------ Twelve Organization Involvement ------------ %>
         <tr>
             <th colspan="2" style="background-color: #353A3F; color: white;">Twelve Organization Involvement</th>
         </tr>
-        <tr>
-            <th>Join date<span class="asterisk">*</span></th>
-            <td><%= f.date_select(:startDate, order: [:month, :year]) %></td>
-        </tr>
-        <tr>
-            <th>End date<span class="asterisk">*</span></th>
-            <td><%= f.date_select(:endDate, order: [:month, :year]) %></td>
-        </tr>
+		<% if ((current_admin.email == "twelvetamu@gmail.com") || (current_admin.email == "rwilson@tamu.edu") || (current_admin.email == "terryho618@tamu.edu") || (current_admin.email == "nguyen.alex@tamu.edu") || (current_admin.email == "wann212@tamu.edu") || (current_admin.email == "keerthana96@tamu.edu")) %>
+			<tr>
+				<th>Alumni Yet?<span class="asterisk">*</span></th>
+				<td>
+					<%= f.check_box :alumniYet %>
+				</td>    
+			</tr>
+		<% end %>
         <tr>
             <th>Positions Held<span class="asterisk">*</span></th>
             <td>
@@ -97,7 +97,7 @@
         <tr>
             <th>Semesters<span class="asterisk">*</span></th>
             <td>
-                <%= f.collection_check_boxes :semester_ids, Semester.all, :id, :name do |b| %>
+                <%= f.collection_check_boxes :semester_ids, Semester.all.reverse_order, :id, :name do |b| %>
                     <%= b.check_box %>
                     <%= b.label %><br>
                 <% end %>

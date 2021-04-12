@@ -1,5 +1,5 @@
 class SemestersController < ApplicationController
-  before_action :set_semester, only: %i[ show edit update destroy ]
+  before_action :set_semester, only: %i[show edit update destroy]
 
   # GET /semesters or /semesters.json
   def index
@@ -7,8 +7,7 @@ class SemestersController < ApplicationController
   end
 
   # GET /semesters/1 or /semesters/1.json
-  def show
-  end
+  def show; end
 
   # GET /semesters/new
   def new
@@ -16,54 +15,48 @@ class SemestersController < ApplicationController
   end
 
   # GET /semesters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /semesters or /semesters.json
   def create
     @semester = Semester.new(semester_params)
 
-    respond_to do |format|
-      if @semester.save
-        format.html { redirect_to @semester, notice: "Semester was successfully created." }
-        format.json { render :show, status: :created, location: @semester }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @semester.errors, status: :unprocessable_entity }
-      end
+    if @semester.save
+      flash[:success] = 'Semester added successfully'
+      redirect_to(semesters_path)
+    else
+      render('new')
     end
   end
 
   # PATCH/PUT /semesters/1 or /semesters/1.json
   def update
-    respond_to do |format|
-      if @semester.update(semester_params)
-        format.html { redirect_to @semester, notice: "Semester was successfully updated." }
-        format.json { render :show, status: :ok, location: @semester }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @semester.errors, status: :unprocessable_entity }
-      end
+    @semester = Semester.find(params[:id])
+    if @semester.update(semester_params)
+      flash[:success] = 'Semester updated successfully'
+      redirect_to(semesters_path)
+    else
+      render('edit')
     end
   end
 
   # DELETE /semesters/1 or /semesters/1.json
   def destroy
+    @semester = Semester.find(params[:id])
     @semester.destroy
-    respond_to do |format|
-      format.html { redirect_to semesters_url, notice: "Semester was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Semester '#{@semester.name}' deleted successfully"
+    redirect_to(semesters_path)
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_semester
-      @semester = Semester.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def semester_params
-      params.require(:semester).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_semester
+    @semester = Semester.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def semester_params
+    params.require(:semester).permit(:name)
+  end
 end

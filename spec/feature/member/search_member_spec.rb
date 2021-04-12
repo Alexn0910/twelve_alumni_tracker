@@ -7,10 +7,11 @@ RSpec.describe 'Add Member: ', type: :feature do
   end
 
   it 'is present in the data record' do
+    # Create first person
     visit new_member_path
 
-    fill_in 'member_first_name', with: 'Testfirst_name'
-    fill_in 'member_last_name', with: 'Testlast_name'
+    fill_in 'member_first_name', with: 'Nick'
+    fill_in 'member_last_name', with: 'Wanner'
     fill_in 'member_email', with: 'test@gmail.com'
     fill_in 'member_major', with: 'Testingg'
     fill_in 'member_current_city', with: 'College Station'
@@ -21,8 +22,11 @@ RSpec.describe 'Add Member: ', type: :feature do
 
     click_on('Submit')
 
-    expect(page).to have_content('Testfirst_name')
-    expect(page).to have_content('Testlast_name')
-    expect(page).to have_content('2016')
+    expect(page).to have_content('Nick')
+
+    fill_in 'search-box', with: 'test'
+    click_button('search-btn')
+
+    expect(page).to have_content('Nick')
   end
 end

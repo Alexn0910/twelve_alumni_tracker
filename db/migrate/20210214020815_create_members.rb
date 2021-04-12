@@ -14,8 +14,7 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       t.string :socialMediaO
       t.string :current_city
       t.string :company
-      t.timestamp :startDate
-      t.timestamp :endDate
+      t.boolean :alumniYet
 
       t.timestamps
     end
