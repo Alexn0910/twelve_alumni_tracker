@@ -13,7 +13,7 @@ class Admins::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  protected
+  #protected
 
   def after_omniauth_failure_path_for(_scope)
     new_admin_session_path
@@ -23,7 +23,7 @@ class Admins::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     stored_location_for(resource_or_scope) || root_path
   end
 
-  private
+  public
 
   def from_google_params
     @from_google_params ||= {
