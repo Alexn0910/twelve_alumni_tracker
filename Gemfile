@@ -29,8 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # for Google OAuth
-# gem 'devise'
-gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'devise'
+# gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth-google-oauth2'
 gem 'omniauth', '~>1.9.1'
 gem "omniauth-rails_csrf_protection"
