@@ -4,7 +4,7 @@
 
 The 12AlumniTracker application was written in Ruby on Rails, using a postgresql database on the backend. The project's current Ruby version is 2.7.3 and rails is 6.1.3.1. The following guid can be used to set up a ruby on rails application: 
 
-[Ruby on Rails + Postgreql Tutorial] (https://www.ionos.com/digitalguide/server/know-how/use-postgresql-with-ruby-on-rails-on-ubuntu/)
+[Ruby on Rails + Postgreql Tutorial](https://www.ionos.com/digitalguide/server/know-how/use-postgresql-with-ruby-on-rails-on-ubuntu/)
 
 Once the postgresql server has been set up, the gems we use can be installed by running the following commands within the root project directory:
 
