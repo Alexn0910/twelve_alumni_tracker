@@ -8,10 +8,10 @@ The 12AlumniTracker application was written in Ruby on Rails, using a postgresql
 
 Once the postgresql server has been set up, the gems we use can be installed by running the following commands within the root project directory:
 
-`bundle install`
-`rails db:migrate:reset`
-`rails db:seed`
-`rails s`
+1. `bundle install`
+2. `rails db:migrate:reset`
+3. `rails db:seed`
+4. `rails s`
 
 This will run a local server of the web app.
 
